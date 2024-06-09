@@ -1,14 +1,20 @@
-.body{
-  margin-top: 95px;
+.whole-page{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.content{
+  margin-top: 85px;
+  padding: 40px;
 }
 
 .navbar-item {
   color: #b7b7b7;
   text-decoration: none;
-
   display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .navbar-item:hover {
@@ -16,12 +22,17 @@
   text-decoration: none;
 }
 
+.centered-items{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
 nav {
   position: fixed;
+  align-items: center;
   display: flex;
   height: 75px;
-  align-items: center;
-  justify-content: center;
   background-color: #171717ff;
 
   z-index: 1000;

@@ -3,11 +3,11 @@ import Navbar from "./navbar.js";
 
 export default function Home() {
   return (
-    <div>
+    <div className="whole-page">
         <Navbar />
-        <div id="body">
+        <main className="content">
             Hello
-        </div>
+        </main>
     </div>
   );
 }
