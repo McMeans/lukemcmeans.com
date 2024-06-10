@@ -1,4 +1,3 @@
-// components/Layout.js
 import Navbar from "./navbar.js";
 
 export default function Layout({ children }){
