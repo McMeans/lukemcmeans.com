@@ -1,9 +1,16 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   top:0;
   left:0;
+}
+
+html {
   background-color: #171717ff;
   background-image: linear-gradient(rgba(63, 63, 63, 0.85), rgba(60, 60, 60, 0.85)), url("/images/background.png");
   background-size: cover;
@@ -12,43 +19,97 @@ html {
 }
 
 .whole-page{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "DM Mono", monospace;
   height: 100%;
 }
 
 .content{
   padding: 40px;
-  margin-top: 95px;
+  margin-top: 75px;
+  max-width: 1200px;
+  min-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
 }
 
+.bold-title{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Red Hat Display", sans-serif;;
+}
+
+/* PROJECTS */
+.projects{
+  display: flex;
+}
+.project-tab{
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5));
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  display: flex;
+  width: 350px;
+  height: 500px;
+  border-radius: 15px;
+}
+#cville-top8s{
+  background-image: linear-gradient(rgba(124, 80, 80, 0.9), rgba(50, 50, 50, 0.5));
+}
+.project-tab text, .project-tab Image {
+  display: block;
+}
+
+/* HOMEPAGE HEADER */
 .home-header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  color: white;
+  align-self: center;
+  max-width: 1000px;
+  min-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .home-name {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
+  font-family: "Red Hat Display", sans-serif; /*"Gabarito", sans-serif;*/
 }
 .mcmeans-headshot{
-  border-radius: 20%;
+  border-radius: 20px;
   margin-right: 20px;
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 .name-card{
-  background-color: #171717ff;
+  background-image: linear-gradient(160deg, rgb(29, 29, 29), #171717ff);
+  border-radius: 15px;
+  padding: 15px 25px 20px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 .name-card text{
   display: block;
 }
-
+.name{
+  font-size: 70px;
+}
+.major-minor{
+  color: rgb(170, 170, 170);
+}
 .uvaLogo {
   margin-left: 5px;
+  vertical-align: middle;
+}
+
+.description{
+  font-size: 20px;
+}
+
+h1 {
+  font-family: "Red Hat Display", sans-serif;
 }
 
 
@@ -113,33 +174,36 @@ nav {
 }
 
 /* FOOTER */
-.bottom-footer{
-  position: absolute;
-  display: table-column;
-  z-index: 1001;
-  margin-left: 15px;
-  width: calc(100% - 45px);
-  bottom: 0;
-}
-
 .separator {
-  width: 100%;
+  width: calc(100% - 40px);
+  margin-left: 20px;
   height: 2px;
   background-color: rgba(183, 183, 183, 0.4);
   border-radius: 4px;
 }
 
-footer {
-  display: flex;
+.bottom-footer {
+  display: table-column;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(33, 33, 33, 0.8));
+  width: 100%;
+  left: 0px;
+}
+footer{
+  display: flex;
+  color: rgb(183, 183, 183, 0.4);
+  align-items: center;
+  justify-content: center;
 }
 footer p {
   margin-left: 40px;
   margin-right: 40px;
 }
-footer a, footer {
+footer a {
   color: rgb(183, 183, 183, 0.4);
 }
 footer a:hover{

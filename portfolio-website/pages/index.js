@@ -11,27 +11,56 @@ export default function HomePage() {
           <Image
             className="mcmeans-headshot"
             src='/images/mcmeans-headshot.jpeg'
-            width={200}
-            height={200}
+            width={250}
+            height={250}
           />
           <div className="name-card">
-            <text>Luke McMeans</text>
-            <text>Aspring Software Engeineer</text>
-            <text>
+            <text className="name">Luke McMeans</text>
+            <text className="bold-title">Aspiring Software Engineer</text>
+            <text className="bold-title">
               Student at the University of Virginia 
               <Image
                 className="uvaLogo"
-                width={20}
-                height={20}
+                src='/images/uvaLogo.png'
+                width={28}
+                height={28}
               />
             </text>
-            <text>-Computer Sciecne Major</text>
-            <text>-Data Science Minor</text>
+            <text className="major-minor">Computer Science Major</text>
+            <text className="major-minor">Data Science Minor</text>
           </div>
         </div>
-        <text>
-          Enthusiastic computer science student with a strong foundation in software development, programming languages, data structures, and mathematics. Committed to providing detail-driven work while staying efficient and accurate. Proven history of organization, teamwork, and management both in and outside the classroom. Aspires to utilize abilities while further developing skills and gaining real-world experience, contributing to the success of a dynamic software development team.
+        <text className="description">
+          Enthusiastic computer science student with a strong foundation 
+          in software development, programming languages, data structures, 
+          and mathematics. Committed to providing detail-driven work while 
+          staying efficient and accurate. Proven history of organization, 
+          teamwork, and management both in and outside the classroom. Aspires 
+          to utilize abilities while further developing skills and gaining 
+          real-world experience, contributing to the success of a dynamic 
+          software development team.
         </text>
+      </div>
+      <h1>Projects</h1>
+      <div className="projects">
+        <div className="project-tab">
+          <text className="bold-title">Loggd</text>
+          {/* TODO: ADD IMAGES*/}
+          <text className="description">{/* TODO: ADD DESCRIPTION */}</text>
+          <div className="hotlinks">
+            <text>{/* ADD <a> */} ⬅️ Click to Download</text>
+            <text>{/* ADD <a> */} ⬅️ GitHub Page</text>
+          </div>
+        </div>
+        <div className="project-tab" id="cville-top8s">
+          <text className="bold-title">Charlottesville Top8s</text>
+          {/* TODO: ADD IMAGES*/}
+          <text className="description">{/* TODO: ADD DESCRIPTION */}</text>
+          <div className="hotlinks">
+            <text>{/* ADD <a> */} ⬅️ Click to Visit</text>
+            <text>{/* ADD <a> */} ⬅️ GitHub Page</text>
+          </div>
+        </div>
       </div>
     </Layout>
   );
