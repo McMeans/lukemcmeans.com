@@ -4,6 +4,7 @@ import Navbar from "./navbar.js";
 export default function Layout({ children }){
   return (
     <div className="whole-page">
+      <link rel="icon" href="/public/favicon.ico" type="image/x-icon"></link>
       <Navbar />
       <main className="content">
         {children}
