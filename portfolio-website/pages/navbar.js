@@ -5,7 +5,8 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-800 p-4">
       <Image 
-          src='/images/McMeansLogo_transparent.png'
+          className="mcmeansLogo-dark"
+          src='/images/dark-mode/mcmeansLogo-dark.png'
           width={60}
           height={60}
         />
