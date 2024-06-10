@@ -7,8 +7,8 @@ export default function Navbar() {
       <Image 
         className="mcmeansLogo-dark"
         src='/images/dark-mode/mcmeansLogo-dark.png'
-        width={60}
-        height={60}
+        width={50}
+        height={50}
       />
       <div className=".centered-items">
         <div>
