@@ -1,10 +1,24 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top:0;
+  left:0;
+  background-color: #171717ff;
+  background-image: linear-gradient(rgba(83, 83, 83, 0.8), rgba(75, 75, 75, 0.8)), url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .whole-page{
   font-family: 'Courier New', Courier, monospace;
+  height: 100%;
 }
 
 .content{
-  margin-top: 85px;
   padding: 40px;
+  margin-top: 95px;
 }
 
 .navbar-item {
@@ -23,8 +37,12 @@
 }
 
 .centered-items{
-  display: inline-block;
+  display: flex;
+  justify-self: center;
   justify-content: center;
+  justify-items: center;
+  align-self: center;
+  align-content: center;
   align-items: center;
 }
 
@@ -33,7 +51,7 @@ nav {
   align-items: center;
   display: flex;
   height: 75px;
-  background-color: #171717ff;
+  background-image: linear-gradient(160deg, rgb(39, 39, 39), #171717ff);
 
   z-index: 1000;
   width: calc(100% - 60px);
@@ -41,6 +59,7 @@ nav {
   left: 10px;
   border-radius: 15px;
   padding: 10px 20px;
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 /*@tailwind base;
