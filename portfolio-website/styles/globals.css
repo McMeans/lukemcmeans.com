@@ -58,6 +58,7 @@ html {
   height: 500px;
   border-radius: 15px;
   margin: 0 10px;
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 #cville-top8s{
   background-image: linear-gradient(rgba(35, 45, 75, 0.7), rgba(16, 20, 34, 0.7));
@@ -67,6 +68,19 @@ html {
 }
 .project-tab .description {
   margin: 30px;
+}
+.project-tab .title {
+  margin-bottom: 15px;
+}
+.githubRedirect {
+  filter: brightness(100);
+}
+.githubRedirect, .loggdLogo, .cvilletop8sLogo {
+  vertical-align:middle auto;
+  margin-right: 7px;
+}
+.githubRedirect:hover, .loggdLogo:hover, .cvilletop8sLogo:hover {
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 /* HOMEPAGE HEADER */

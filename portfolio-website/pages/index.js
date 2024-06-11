@@ -47,13 +47,34 @@ export default function HomePage() {
           <text className="project-title">Loggd</text>
           {/* TODO: ADD IMAGES*/}
           <text className="description">
-            A Google Chrome Extension that brings the user to the IMDB, Letterboxd, 
-            Rotten Tomatoes, or Metacritic page of a movie they input. I constructed
-            the frontend while prompt-engineering the initial backend using GPT 3.5. Published August 2023.
+            A Chrome Extension that brings the user to the Letterboxd, IMDb, TMBD 
+            Rotten Tomatoes, or Metacritic page of an inputted movie. I constructed 
+            the frontend and prompt-engineering the initial backend with GPT 3.5. 
+            Published August 2023.
           </text>
           <div className="hotlinks">
-            <text className="title">{/* ADD <a> */} ⬅️ Click to Download</text>
-            <text className="title">{/* ADD <a> */} ⬅️ GitHub Page</text>
+            <text className="title">
+              <a href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
+                <Image
+                  className="loggdLogo"
+                  src='/images/loggdLogo.png'
+                  width={30}
+                  height={30}
+                />
+              </a>
+              ← Click to Download
+            </text>
+            <text className="title">
+              <a href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">
+                <Image
+                  className="githubRedirect"
+                  src='/images/dark-mode/githubLogo-dark.png'
+                  width={30}
+                  height={30}
+                />
+              </a>
+              ← GitHub Page
+            </text>
           </div>
         </div>
         <div className="project-tab" id="cville-top8s">
@@ -65,8 +86,28 @@ export default function HomePage() {
             Built using the Django framework and Pillow. Published June 2024.
           </text>
           <div className="hotlinks">
-            <text className="title">{/* ADD <a> */} ⬅️ Click to Visit</text>
-            <text className="title">{/* ADD <a> */} ⬅️ GitHub Page</text>
+            <text className="title">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image
+                  className="cvilletop8sLogo"
+                  src='/images/cvilletop8sLogo.png'
+                  width={30}
+                  height={30}
+                />
+              </a>
+              ← Click to Visit
+            </text>
+            <text className="title">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image
+                  className="githubRedirect"
+                  src='/images/dark-mode/githubLogo-dark.png'
+                  width={30}
+                  height={30}
+                />
+              </a>
+              ← GitHub Page
+            </text>
           </div>
         </div>
       </div>
