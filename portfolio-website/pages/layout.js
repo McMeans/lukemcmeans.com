@@ -5,9 +5,12 @@ export default function Layout({ children }){
     <div className="whole-page">
       <link rel="icon" href="/public/favicon.ico" type="image/x-icon"></link>
       <Navbar />
-      <main className="content">
-        {children}
-      </main>
+      <div className="background">
+        <main className="content">
+          <div className="gap"></div>
+          {children}
+        </main>
+      </div>
       <div className="bottom-footer">
         <div className="separator"></div>
         <footer>

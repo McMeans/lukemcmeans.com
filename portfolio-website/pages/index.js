@@ -47,10 +47,11 @@ export default function HomePage() {
           <text className="project-title">Loggd</text>
           {/* TODO: ADD IMAGES*/}
           <text className="description">
-            A Chrome Extension that brings the user to the Letterboxd, IMDb, TMBD, 
-            Rotten Tomatoes, or Metacritic page of an inputted movie. I constructed 
-            the frontend and prompt-engineering the initial backend with GPT 3.5. 
-            Published August 2023.
+            This is a Google Chrome Extension that redirects the user to the page of the movie they input. 
+            They have the ability to navigate to either the Letterboxd, IMDb, TMDB, Rotten Tomatoes, or
+            Metacritic page for their movie. I constructed the frontend of this project and prompt-engineered 
+            the initial backend with GPT 3.5. Any instance of maintenance has been handled by me. Published 
+            August 2023; last updated June 2024.
           </text>
           <div className="hotlinks">
             <text className="title">
@@ -81,9 +82,12 @@ export default function HomePage() {
           <text className="project-title">Charlottesville Top8s</text>
           {/* TODO: ADD IMAGES*/}
           <text className="description">
-            Built for the Charlottesville Smash Community and club at UVA, this website 
-            constructs Top 8 graphics for tournament results that are inputted by the user.
-            Built using the Django framework and Pillow. Published June 2024.
+            Built for the Charlottesville Super Smash Brothers Community and club at UVA, 
+            this website generates Top 8 graphics for tournament results inputted by the user.
+            Users are able to display each player's name, X/Twitter handle, primary character, 
+            and secondary characters, with the ability to upload a custom photo if desired.
+            Templates were designed for each of the weekly tournaments in the area. This 
+            program was built using the Django framework and Pillow. Published June 2024.
           </text>
           <div className="hotlinks">
             <text className="title">

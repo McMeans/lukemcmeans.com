@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <Layout>
       <title>Luke McMeans - Resume</title>
-      Resume
+      <h1>Resume</h1>
     </Layout>
   );
 }

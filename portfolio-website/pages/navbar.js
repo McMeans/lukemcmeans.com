@@ -5,12 +5,17 @@ export default function Navbar() {
   return (
     <div className="blur">
       <nav className="bg-gray-800 p-4">
-        <Image 
-          className="mcmeansLogo-dark"
-          src='/images/dark-mode/mcmeansLogo-dark.png'
-          width={50}
-          height={50}
-        />
+        <Link href="/" className="mcmeansLogo-dark">
+          <Image 
+            src='/images/dark-mode/mcmeansLogo-dark.png'
+            width={50}
+            height={50}
+          />
+          <div>
+            <text>Luke</text>
+            <text>McMeans</text>
+          </div>
+        </Link>
         <div className=".centered-items">
           <div>
             <Link href="/" className="navbar-item">Home</Link>
