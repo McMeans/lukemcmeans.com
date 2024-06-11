@@ -47,7 +47,7 @@ export default function HomePage() {
           <text className="project-title">Loggd</text>
           {/* TODO: ADD IMAGES*/}
           <text className="description">
-            A Chrome Extension that brings the user to the Letterboxd, IMDb, TMBD 
+            A Chrome Extension that brings the user to the Letterboxd, IMDb, TMBD, 
             Rotten Tomatoes, or Metacritic page of an inputted movie. I constructed 
             the frontend and prompt-engineering the initial backend with GPT 3.5. 
             Published August 2023.

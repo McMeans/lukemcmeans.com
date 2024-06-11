@@ -41,6 +41,7 @@ html {
 /* PROJECTS */
 .projects{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
 }
@@ -48,7 +49,8 @@ html {
   font-weight: bold;
 }
 .project-tab{
-  flex: 1;
+  flex: 47.32%;
+  box-sizing: border-box;
   background-image: linear-gradient(rgba(47, 113, 234, 0.7), rgba(29, 80, 174, 0.7));
   flex-direction: column;
   padding: 20px;
@@ -59,6 +61,7 @@ html {
   border-radius: 15px;
   margin: 0 10px;
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
+  margin-bottom: 30px;
 }
 #cville-top8s{
   background-image: linear-gradient(rgba(35, 45, 75, 0.7), rgba(16, 20, 34, 0.7));
@@ -93,18 +96,21 @@ html {
   min-width: 100px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 35px;
 }
 .home-name {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-family: "Red Hat Display", sans-serif; /*"Gabarito", sans-serif;*/
 }
 .mcmeans-headshot{
   border-radius: 20px;
   margin-right: 20px;
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
+  margin-bottom: 20px;
 }
 .name-card{
   background-image: linear-gradient(160deg, rgb(29, 29, 29), #171717ff);
@@ -112,6 +118,7 @@ html {
   padding: 15px 25px 20px;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
+  flex: 51%;
 }
 .name-card text{
   display: block;
@@ -137,6 +144,15 @@ h1 {
 
 
 /* NAVBAR */
+.blur{
+  background-image: linear-gradient(rgb(54, 54, 54), rgba(100, 100, 100, 0));
+  top: 0;
+  left: 0;
+  position: fixed;
+  width:100%;
+  height: 75px;
+  z-index: 999;
+}
 nav {
   position: fixed;
   align-items: center;
