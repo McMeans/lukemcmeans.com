@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: #433f3e;
@@ -11,7 +11,7 @@ html, body {
 
 .whole-page{
   font-family: "DM Mono", monospace;
-  height: 100%;
+  min-height: 100%;
 }
 
 .content{
@@ -21,11 +21,12 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   color: white;
+  min-height: 100%;
 }
 .background{
   top: 0;
   left: 0;
-  height: 100%;
+  min-height: 100%;
   background-image: linear-gradient(rgba(63, 63, 63, 0.85), rgba(60, 60, 60, 0.85)), url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -40,6 +41,7 @@ html, body {
 .title, .project-title{
   font-size: 30px;
   font-family: "Red Hat Display", sans-serif;
+  text-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 /* PROJECTS */
@@ -141,10 +143,12 @@ html, body {
 
 .description{
   font-size: 20px;
+  text-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 h1 {
   font-family: "Red Hat Display", sans-serif;
+  text-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 
@@ -274,4 +278,16 @@ footer a {
 }
 footer a:hover{
   color: rgba(200, 200, 200, 0.6)
+}
+
+/* RESUME */
+.fas{
+  filter: brigtness(100);
+}
+
+iframe {
+  height: 1000px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
