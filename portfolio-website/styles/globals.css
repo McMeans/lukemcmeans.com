@@ -33,18 +33,23 @@ html {
   color: white;
 }
 
-.bold-title{
+.title, .project-title{
   font-size: 30px;
-  font-weight: bold;
   font-family: "Red Hat Display", sans-serif;;
 }
 
 /* PROJECTS */
 .projects{
   display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.project-title{
+  font-weight: bold;
 }
 .project-tab{
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5));
+  flex: 1;
+  background-image: linear-gradient(rgba(47, 113, 234, 0.7), rgba(29, 80, 174, 0.7));
   flex-direction: column;
   padding: 20px;
   align-items: center;
@@ -52,12 +57,16 @@ html {
   width: 350px;
   height: 500px;
   border-radius: 15px;
+  margin: 0 10px;
 }
 #cville-top8s{
-  background-image: linear-gradient(rgba(124, 80, 80, 0.9), rgba(50, 50, 50, 0.5));
+  background-image: linear-gradient(rgba(35, 45, 75, 0.7), rgba(16, 20, 34, 0.7));
 }
 .project-tab text, .project-tab Image {
   display: block;
+}
+.project-tab .description {
+  margin: 30px;
 }
 
 /* HOMEPAGE HEADER */
@@ -100,7 +109,7 @@ html {
   color: rgb(170, 170, 170);
 }
 .uvaLogo {
-  margin-left: 5px;
+  margin-left: 8px;
   vertical-align: middle;
 }
 

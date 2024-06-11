@@ -16,8 +16,8 @@ export default function HomePage() {
           />
           <div className="name-card">
             <text className="name">Luke McMeans</text>
-            <text className="bold-title">Aspiring Software Engineer</text>
-            <text className="bold-title">
+            <text className="title">Aspiring Software Engineer</text>
+            <text className="title">
               Student at the University of Virginia 
               <Image
                 className="uvaLogo"
@@ -44,21 +44,29 @@ export default function HomePage() {
       <h1>Projects</h1>
       <div className="projects">
         <div className="project-tab">
-          <text className="bold-title">Loggd</text>
+          <text className="project-title">Loggd</text>
           {/* TODO: ADD IMAGES*/}
-          <text className="description">{/* TODO: ADD DESCRIPTION */}</text>
+          <text className="description">
+            A Google Chrome Extension that brings the user to the IMDB, Letterboxd, 
+            Rotten Tomatoes, or Metacritic page of a movie they input. I constructed
+            the frontend while prompt-engineering the initial backend using GPT 3.5. Published August 2023.
+          </text>
           <div className="hotlinks">
-            <text>{/* ADD <a> */} ⬅️ Click to Download</text>
-            <text>{/* ADD <a> */} ⬅️ GitHub Page</text>
+            <text className="title">{/* ADD <a> */} ⬅️ Click to Download</text>
+            <text className="title">{/* ADD <a> */} ⬅️ GitHub Page</text>
           </div>
         </div>
         <div className="project-tab" id="cville-top8s">
-          <text className="bold-title">Charlottesville Top8s</text>
+          <text className="project-title">Charlottesville Top8s</text>
           {/* TODO: ADD IMAGES*/}
-          <text className="description">{/* TODO: ADD DESCRIPTION */}</text>
+          <text className="description">
+            Built for the Charlottesville Smash Community and club at UVA, this website 
+            constructs Top 8 graphics for tournament results that are inputted by the user.
+            Built using the Django framework and Pillow. Published June 2024.
+          </text>
           <div className="hotlinks">
-            <text>{/* ADD <a> */} ⬅️ Click to Visit</text>
-            <text>{/* ADD <a> */} ⬅️ GitHub Page</text>
+            <text className="title">{/* ADD <a> */} ⬅️ Click to Visit</text>
+            <text className="title">{/* ADD <a> */} ⬅️ GitHub Page</text>
           </div>
         </div>
       </div>
