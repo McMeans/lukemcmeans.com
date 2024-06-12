@@ -40,6 +40,35 @@ export default function HomePage() {
           real-world experience, contributing to the success of a dynamic 
           software development team.
         </text>
+        <footer className="all-socials">
+          <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer">
+            <Image 
+              className="emailIcon-dark"
+              src='/images/dark-mode/emailIcon-dark.png'
+              width={16}
+              height={16}
+            />
+            <text>elukemcmeans@gmail.com</text>
+          </a>
+          <a href="https://www.linkedin.com/in/luke-mcmeans/" target="_blank" rel="noopener noreferrer">
+            <Image 
+              className="linkedinLogo-dark"
+              src='/images/dark-mode/linkedinLogo-dark.png'
+              width={16}
+              height={16}
+            />
+            <text>in/luke-mcmeans</text>
+          </a>
+          <a href="https://github.com/McMeans" target="_blank" rel="noopener noreferrer">
+            <Image 
+              className="githubLogo-dark"
+              src='/images/dark-mode/githubLogo-dark.png'
+              width={16}
+              height={16}
+            />
+            <text>@McMeans</text>
+          </a>
+        </footer>
       </div>
       <h1>Projects</h1>
       <div className="projects">
@@ -57,7 +86,7 @@ export default function HomePage() {
             They have the ability to navigate to either the Letterboxd, IMDb, TMDB, Rotten Tomatoes, or
             Metacritic page for their movie. I constructed the frontend of this project and prompt-engineered 
             the initial backend with GPT 3.5. Any instance of maintenance has been handled by me. Published 
-            August 2023; last updated June 2024.
+            August 2023; last updated June 2024. Safari Extension coming soon.
           </text>
           <div className="hotlinks">
           <a className="title" href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
@@ -67,8 +96,17 @@ export default function HomePage() {
                 width={30}
                 height={30}
               />
-              ← Click to Download
+              ← Chrome Download
             </a>
+            {/*<a className="title" href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
+              <Image
+                className="loggdLogo"
+                src='/images/loggdLogo.png'
+                width={30}
+                height={30}
+              />
+              ← Safari Download
+            </a>*/}
             <a className="title" href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">
               <Image
                 className="githubRedirect"
