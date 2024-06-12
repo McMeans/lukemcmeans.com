@@ -45,42 +45,50 @@ export default function HomePage() {
       <div className="projects">
         <div className="project-tab">
           <text className="project-title">Loggd</text>
-          {/* TODO: ADD IMAGES*/}
+          <Image
+            className="project-photo"
+            src="/images/project-photos/loggdScreenshot.png"
+            width={0}
+            height={0}
+            layout="responsive"
+          />
           <text className="description">
-            This is a Google Chrome Extension that redirects the user to the page of the movie they input. 
+            This Google Chrome Extension redirects the user to the page of the movie they input. 
             They have the ability to navigate to either the Letterboxd, IMDb, TMDB, Rotten Tomatoes, or
             Metacritic page for their movie. I constructed the frontend of this project and prompt-engineered 
             the initial backend with GPT 3.5. Any instance of maintenance has been handled by me. Published 
             August 2023; last updated June 2024.
           </text>
           <div className="hotlinks">
-            <text className="title">
-              <a href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
-                <Image
-                  className="loggdLogo"
-                  src='/images/loggdLogo.png'
-                  width={30}
-                  height={30}
-                />
-              </a>
+          <a className="title" href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
+              <Image
+                className="loggdLogo"
+                src='/images/loggdLogo.png'
+                width={30}
+                height={30}
+              />
               ← Click to Download
-            </text>
-            <text className="title">
-              <a href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">
-                <Image
-                  className="githubRedirect"
-                  src='/images/dark-mode/githubLogo-dark.png'
-                  width={30}
-                  height={30}
-                />
-              </a>
+            </a>
+            <a className="title" href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">
+              <Image
+                className="githubRedirect"
+                src='/images/dark-mode/githubLogo-dark.png'
+                width={30}
+                height={30}
+              />
               ← GitHub Page
-            </text>
+            </a>
           </div>
         </div>
         <div className="project-tab" id="cville-top8s">
           <text className="project-title">Charlottesville Top8s</text>
-          {/* TODO: ADD IMAGES*/}
+          <Image
+            className="project-photo"
+            src="/images/project-photos/cvilletop8sScreenshot.png"
+            width={0}
+            height={0}
+            layout="responsive"
+          />
           <text className="description">
             Built for the Charlottesville Super Smash Brothers Community and club at UVA, 
             this website generates Top 8 graphics for tournament results inputted by the user.
@@ -90,28 +98,24 @@ export default function HomePage() {
             program was built using the Django framework and Pillow. Published June 2024.
           </text>
           <div className="hotlinks">
-            <text className="title">
-              <a href="" target="_blank" rel="noopener noreferrer">
-                <Image
-                  className="cvilletop8sLogo"
-                  src='/images/cvilletop8sLogo.png'
-                  width={30}
-                  height={30}
-                />
-              </a>
+            <a className="title" href="https://charlottesville-top8s-50b4ab9ef36b.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+              <Image
+                className="cvilletop8sLogo"
+                src='/images/cvilletop8sLogo.png'
+                width={30}
+                height={30}
+              />
               ← Click to Visit
-            </text>
-            <text className="title">
-              <a href="" target="_blank" rel="noopener noreferrer">
-                <Image
-                  className="githubRedirect"
-                  src='/images/dark-mode/githubLogo-dark.png'
-                  width={30}
-                  height={30}
-                />
-              </a>
+            </a>
+            <a className="title" href="https://github.com/McMeans/charlottesville-top8s" target="_blank" rel="noopener noreferrer">
+              <Image
+                className="githubRedirect"
+                src='/images/dark-mode/githubLogo-dark.png'
+                width={30}
+                height={30}
+              />
               ← GitHub Page
-            </text>
+            </a>
           </div>
         </div>
       </div>

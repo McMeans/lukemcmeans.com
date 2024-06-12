@@ -55,7 +55,7 @@ html, body {
   font-weight: bold;
 }
 .project-tab{
-  flex: 47.18%;
+  flex: 47.24%;
   box-sizing: border-box;
   background-image: linear-gradient(rgba(47, 113, 234, 0.7), rgba(29, 80, 174, 0.7));
   flex-direction: column;
@@ -80,6 +80,17 @@ html, body {
 .project-tab .title {
   margin-bottom: 15px;
   font-size: 28px;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.project-tab a:hover {
+  font-weight: 500;
+}
+.project-photo {
+  margin-top: 20px;
+  border-radius: 40px;
+  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 .githubRedirect {
   filter: brightness(100);
@@ -87,9 +98,6 @@ html, body {
 .githubRedirect, .loggdLogo, .cvilletop8sLogo {
   vertical-align:middle auto;
   margin-right: 7px;
-}
-.githubRedirect:hover, .loggdLogo:hover, .cvilletop8sLogo:hover {
-  box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 
 /* HOMEPAGE HEADER */
@@ -197,7 +205,6 @@ nav Link {
 }
 .navbar-item:hover {
   color: white;
-  text-decoration: none;
 }
 
 .centered-items{
@@ -251,7 +258,6 @@ nav Link {
   background-color: rgba(183, 183, 183, 0.4);
   border-radius: 4px;
 }
-
 .bottom-footer {
   display: table-column;
   align-items: center;
@@ -281,13 +287,12 @@ footer a:hover{
 }
 
 /* RESUME */
-.fas{
-  filter: brigtness(100);
-}
-
 iframe {
   height: 1000px;
   margin-bottom: 25px;
   border-radius: 20px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #b7b7b7;
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
