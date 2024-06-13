@@ -89,10 +89,10 @@ export default function HomePage() {
             August 2023; last updated June 2024. Safari Extension coming soon.
           </text>
           <div className="hotlinks">
-          <a className="title" href="/loggd" target="_blank" rel="noopener noreferrer">
+          <a className="title" href="/loggd-redirect" target="_blank" rel="noopener noreferrer">
               <Image
                 className="loggdLogo"
-                src='/images/loggdLogo.png'
+                src='/images/project-photos/loggdLogo.png'
                 width={30}
                 height={30}
               />
@@ -130,7 +130,7 @@ export default function HomePage() {
             <a className="title" href="https://charlottesville-top8s-50b4ab9ef36b.herokuapp.com/" target="_blank" rel="noopener noreferrer">
               <Image
                 className="cvilletop8sLogo"
-                src='/images/cvilletop8sLogo.png'
+                src='/images/project-photos/cvilletop8sLogo.png'
                 width={30}
                 height={30}
               />
