@@ -89,24 +89,15 @@ export default function HomePage() {
             August 2023; last updated June 2024. Safari Extension coming soon.
           </text>
           <div className="hotlinks">
-          <a className="title" href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
+          <a className="title" href="/loggd" target="_blank" rel="noopener noreferrer">
               <Image
                 className="loggdLogo"
                 src='/images/loggdLogo.png'
                 width={30}
                 height={30}
               />
-              ← Chrome Download
+              ← Add to Browser
             </a>
-            {/*<a className="title" href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm" target="_blank" rel="noopener noreferrer">
-              <Image
-                className="loggdLogo"
-                src='/images/loggdLogo.png'
-                width={30}
-                height={30}
-              />
-              ← Safari Download
-            </a>*/}
             <a className="title" href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">
               <Image
                 className="githubRedirect"
