@@ -93,7 +93,7 @@ html, body {
   box-shadow: 0px 4px 6px rgba(32, 32, 32, 0.3);
 }
 .githubRedirect {
-  filter: brightness(100);
+  filter: brightness(1.5);
 }
 .githubRedirect, .loggdLogo, .cvilletop8sLogo {
   vertical-align:middle auto;
@@ -169,7 +169,7 @@ html, body {
   margin-right: 30px;
 }
 .all-socials a:hover{
-  filter: brightness(100);
+  filter: brightness(1.5);
   color: white;
 }
 
@@ -262,7 +262,7 @@ nav Link {
 .mcmeansLogo-dark:hover, 
 .socials .githubLogo-dark:hover,
 .socials .linkedinLogo-dark:hover {
-  filter: brightness(100);
+  filter: brightness(1.5);
 }
 
 .socials .githubLogo-dark {

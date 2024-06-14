@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Loggd() {
     const [isDetecting, setIsDetecting] = useState(true);
-    /*useEffect(() => {
+    useEffect(() => {
         const userAgent = navigator.userAgent
         if (/Chrom(e|ium)/.test(userAgent)) {
             window.location.href = 'https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm';
@@ -27,7 +27,7 @@ export default function Loggd() {
                 </text>
             </main>
         );
-    }*/
+    }
     return (
         <main className={styles.body}>
             <title>Add Loggd to Browser</title>
