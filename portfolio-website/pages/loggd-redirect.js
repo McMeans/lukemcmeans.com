@@ -8,9 +8,9 @@ export default function Loggd() {
         const userAgent = navigator.userAgent
         if (/Chrom(e|ium)/.test(userAgent)) {
             window.location.href = 'https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm';
-        } else if (/Safari/.test(userAgent)) {
+        /*} else if (/Safari/.test(userAgent)) {
             window.location.href = 'https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm';
-            // TODO: CHANGE TO CORRESPONDING WEBSITE
+            // TODO: CHANGE TO CORRESPONDING WEBSITE*/
         } else if (/Firefox/.test(userAgent)) {
             window.location.href = 'https://addons.mozilla.org/en-US/firefox/addon/loggd/';
         } else {
@@ -41,7 +41,7 @@ export default function Loggd() {
                 wasn't detected properly, or it's not compatible. Currently,
                 this extension works with Chromium-based browsers <a className={styles.chromium}
                     href="https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium"
-                    target="_blank" rel="noopener noreferrer">(see all here)</a>, Safari, and Firefox.
+                    target="_blank" rel="noopener noreferrer">(see all here)</a>{/*, Safari,*/} and Firefox.
                 We've provided download links for each of those browsers below, so you're welcome to
                 manually navigate and download.
             </text>
@@ -55,7 +55,7 @@ export default function Loggd() {
                     />
                     Add to Chromium
                 </a>
-                <a className={styles.hotlink} href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm">
+                {/*<a className={styles.hotlink} href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm">
                     <Image
                         className={styles.browserLogo}
                         src="/images/loggd-page/safariLogo.png"
@@ -63,8 +63,8 @@ export default function Loggd() {
                         height={100}
                     />
                     Add to Safari
-                </a>
-                <a className={styles.hotlink} href="https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm">
+                </a>*/}
+                <a className={styles.hotlink} href="https://addons.mozilla.org/en-US/firefox/addon/loggd/">
                     <Image
                         className={styles.browserLogo}
                         src="/images/loggd-page/firefoxLogo.png"
