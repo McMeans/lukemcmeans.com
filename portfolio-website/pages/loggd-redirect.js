@@ -12,8 +12,7 @@ export default function Loggd() {
             window.location.href = 'https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm';
             // TODO: CHANGE TO CORRESPONDING WEBSITE
         } else if (/Firefox/.test(userAgent)) {
-            window.location.href = 'https://chromewebstore.google.com/detail/loggd/ecbepjhmbpkgmdejfekkmpoeijkcophm';
-            // TODO: CHANGE TO CORRESPONDING WEBSITE
+            window.location.href = 'https://addons.mozilla.org/en-US/firefox/addon/loggd/';
         } else {
             setIsDetecting(false);
         }
