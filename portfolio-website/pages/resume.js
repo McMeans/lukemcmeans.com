@@ -16,7 +16,7 @@ export default function HomePage() {
           />
         </a>
       </h1>
-      <iframe src="/LukeMcMeans_Resume.pdf" width="100%" height="100%"/>
+      <iframe src="/LukeMcMeans_Resume.pdf" allowfullscreen/>
     </Layout>
   );
 }

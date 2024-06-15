@@ -11,7 +11,7 @@ export default function Navbar() {
             width={50}
             height={50}
           />
-          <div>
+          <div className="mcmeansLogo-name">
             <text>Luke</text>
             <text>McMeans</text>
           </div>

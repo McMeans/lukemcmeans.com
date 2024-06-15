@@ -18,13 +18,16 @@ export default function HomePage() {
             <text className="name">Luke McMeans</text>
             <text className="title">Aspiring Software Engineer</text>
             <text className="title">
-              Student at the University of Virginia 
-              <Image
+              Student at the University of&nbsp;
+              <span className="nowrap">
+                Virginia
+                <Image
                 className="uvaLogo"
                 src='/images/uvaLogo.png'
                 width={28}
                 height={28}
-              />
+                />
+              </span>
             </text>
             <text className="major-minor">Computer Science Major</text>
             <text className="major-minor">Data Science Minor</text>
@@ -82,11 +85,13 @@ export default function HomePage() {
             layout="responsive"
           />
           <text className="description">
-            This Google Chrome Extension redirects the user to the page of the movie they input. 
+            This web extension redirects the user to the page of the movie they input. 
             They have the ability to navigate to either the Letterboxd, IMDb, TMDB, Rotten Tomatoes, or
             Metacritic page for their movie. I constructed the frontend of this project and prompt-engineered 
-            the initial backend with GPT 3.5. Any instance of maintenance has been handled by me. Published 
-            August 2023; last updated June 2024. Safari Extension coming soon.
+            the initial backend with GPT 3.5. Any instance of maintenance has been handled by me. Compatible 
+            with <a class="chromium" href="https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium"
+            target="_blank" rel="noopener noreferrer">Chromium-based browsers</a> and Firefox. Published 
+            August 2023; last updated June 2024.
           </text>
           <div className="hotlinks">
           <a className="title" href="/loggd-redirect" target="_blank" rel="noopener noreferrer">

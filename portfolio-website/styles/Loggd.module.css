@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-.logo{
+.logo {
     max-width: 275px;
     width: 60%;
     height: auto;
@@ -27,12 +27,13 @@
     width: 70%;
     font-size: 20px;
 }
+
 .chromium {
     color: rgb(209, 210, 240);
     font-size: 14px;
 }
 
-.links{
+.links {
     margin-top: 40px;
     align-self: center;
     align-items: center;
@@ -52,13 +53,22 @@
     border-color: aliceblue;
     border-radius: 10px;
 }
-.hotlink:hover{
+
+.hotlink:hover {
     font-weight: bold;
 }
-.browserLogo{
+
+.browserLogo {
     width: 20px;
     height: auto;
     margin-right: 8px;
     vertical-align: sub;
     margin-bottom: 2px;
+}
+
+@media (max-width: 500px) {
+    .hotlink {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
