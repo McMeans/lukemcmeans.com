@@ -343,7 +343,7 @@ footer a:hover{
 
 /* RESUME */
 iframe {
-  width: calc(100vw - 80px);
+  width: 100%;
   min-height: 500px;
   height: calc((11/8.5) * (100vw - 80px));
   margin-bottom: 25px;
@@ -373,7 +373,6 @@ iframe {
   }
 
   iframe {
-    width: calc(100vw - 40px);
     min-height: 500px;
     height: calc((11/8.5) * (100vw - 80px));
   }
