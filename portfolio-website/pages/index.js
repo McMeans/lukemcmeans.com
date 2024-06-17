@@ -132,7 +132,7 @@ export default function HomePage() {
             program was built using the Django framework and Pillow. Published June 2024.
           </text>
           <div className="hotlinks">
-            <a className="title" href="https://charlottesville-top8s-50b4ab9ef36b.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+            <a className="title" href="/charlottesville-top8s" target="_blank" rel="noopener noreferrer">
               <Image
                 className="cvilletop8sLogo"
                 src='/images/project-photos/cvilletop8sLogo.png'
