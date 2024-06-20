@@ -34,14 +34,11 @@ export default function HomePage() {
           </div>
         </div>
         <text className="description">
-          Enthusiastic computer science student with a strong foundation 
-          in software development, programming languages, data structures, 
-          and mathematics. Committed to providing detail-driven work while 
-          staying efficient and accurate. Proven history of organization, 
-          teamwork, and management both in and outside the classroom. Aspires 
-          to utilize abilities while further developing skills and gaining 
-          real-world experience, contributing to the success of a dynamic 
-          software development team.
+        Enthusiastic computer science student with a strong foundation in software development, data structures,
+         LLM/AI prompt-engineering, and mathematics. Committed to providing detail-driven work while staying efficient 
+         and accurate. Proven history of organization, teamwork, and management both in and outside the classroom. 
+         Aspires to utilize abilities while further developing skills, learning new technologies, and gaining real-world 
+         experience, contributing to the success of a dynamic software development team.
         </text>
         <footer className="all-socials">
           <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer">
