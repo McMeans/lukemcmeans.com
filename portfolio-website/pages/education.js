@@ -12,8 +12,7 @@ export default function HomePage() {
           exit="exit"
           transition={{ duration: 0.3 }}
         >
-      <title>Luke McMeans - Resume</title>
-      <iframe src="/LukeMcMeans_Resume.pdf" allowfullscreen/>
+      <title>Luke McMeans - Education</title>
     </motion.div>
   );
 }
