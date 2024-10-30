@@ -18,7 +18,7 @@
   --tabcolor: #b7b7b7;
   --dropshadow-hover: 0px 2px 4px rgba(102, 102, 102, 0.5);
   --dropshadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
-  --footercolor: #999;
+  --footercolor: #5a5a5a;
   --general-text-color: white;
 }
 
@@ -48,25 +48,30 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: var(--general-text-color);
+  width: 100vw;
+}
+.whole-page{
+  overflow-x: hidden;
+  width: 100%;
+  position: fixed;
 }
 
 /* LAYOUT.js */
 .header{
-  background-image: linear-gradient(150deg, rgba(208, 0, 0, 0.8), rgba(7, 55, 99, 0.8)), url("/images/background.png");
   font-weight: 800;
-  font-size: 80px;
+  font-size: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 175px;
+  height: 190px;
   margin-bottom: 15px;
   box-shadow: var(--dropshadow);
-  border-radius: 25px;
 
   position: fixed;
-  top: 10px;
+  top: 0px;
+  left: 0px;
   z-index: 1000;
-  width: calc(100vw - 15px);
+  width: calc(100vw);
 }
 .header a{
   display: flex;
@@ -76,25 +81,26 @@ body {
   color: white;
 }
 .header span {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .gap{
-  margin-bottom: 195px;
+  margin-bottom: 205px;
 }
 
 .layout-body{
   display: flex;
   justify-content: center;
-  padding: 20px 200px;
-  width: 50%;
-  margin: auto;
-  position: relative;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .nav-column{
-  min-width: 160px;
-  margin-right: 50px;
+  min-width: 185px;
+  margin-right: 30px;
 }
 
 .tabs a{
@@ -102,22 +108,42 @@ body {
   text-decoration: none;
   color: var(--tabcolor);
   font-weight: bold;
-  font-size: 25px;
+  font-size: 28px;
   margin-bottom: 10px;
-  transition: font-size 0.3s ease;
+  transition: font-size 0.3s ease, font-weight 0.3s ease;
+  height: 35px;
 }
 .tabs a:hover,
 .current-tab{
   font-weight: 900;
-  font-size: 28px;
+  font-size: 30px;
+  transition: font-size 0.3s ease, font-weight 0.3s ease;
+}
+.current-tab{
   color: var(--general-text-color);
-  transition: font-size 0.3s ease;
 }
 
 .content{
-  min-width: 500px;
-  height: calc(100vh - 215px);
+  min-width: 600px;
+  max-width: 600px;
+  height: calc(100vh - 225px);
   overflow-y: auto;
+  scrollbar-width: none;
+  transition: transform 0.3s ease;
+  overflow-x: hidden !important;
+}
+/* Webkit (Safari/Chrome) scrollbar styling */
+.content::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.content::-webkit-scrollbar-track {
+  background: transparent; /* Track background */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Thumb color */
+  border-radius: 4px;
 }
 
 footer{
@@ -146,7 +172,7 @@ footer a:hover{
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  font-size: 22px;
+  font-size: 25px;
 }
 .detail-image{
   margin-right: 10px;
@@ -154,7 +180,7 @@ footer a:hover{
 }
 
 .summary{
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 10px;
 }
 
@@ -171,10 +197,10 @@ footer a:hover{
   box-shadow: var(--dropshadow-hover);
 }
 
-/* PROJECTS.js & EXPERIENCE.js*/
+/* PROJECTS.js, EXPERIENCE.js, and EDUCATION.js */
 .activity-tab{
   padding: 30px;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 25px;
   margin-bottom: 20px;
   color: white;
@@ -188,11 +214,12 @@ footer a:hover{
 }
 .carahsoft{
   background-image: linear-gradient(150deg, #2a56a5, #1d448a);
-  font-size: 16px;
 }
 .tln{
   background-image: linear-gradient(150deg, #999999, #666666);
-  font-size: 16px;
+}
+.uva{
+  background-image: linear-gradient(150deg, #e57200, #232d4b);
 }
 
 .activity-title{
@@ -210,6 +237,12 @@ footer a:hover{
   margin-right: 15px;
 }
 
+.minor{
+  font-size: 24px;
+  font-weight: 600 !important;
+  margin-bottom: 5px;
+}
+
 .company-image{
   margin-bottom: 5px;
 }
@@ -223,7 +256,7 @@ footer a:hover{
   transition: font-weight 0.3s ease;
 }
 .activity-tab a:hover{
-  font-weight: 600;
+  font-weight: 500;
 }
 .activity-tab tasks{
   list-style-position:inherit;
@@ -231,6 +264,28 @@ footer a:hover{
 .activity-tab li{
   margin-top: 5px;
   margin-bottom: 2px;
+}
+
+.loggd .description,
+.top8s .description{
+  margin-bottom: 5px;
+}
+.project-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: font-weight 0.3s ease !important;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-right: 15px;
+  min-width: 100px;
+  background-color: #ffffff46;
+  padding: 5px 10px;
+  color: white !important;
+  border-radius: 8px;
+  text-align: center;
+}
+.project-link:hover{
+  font-weight: 700 !important;
 }
 
 /* RESUME.js */
@@ -251,7 +306,7 @@ iframe{
   margin-bottom: 20px;
   color: var(--general-text-color);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
   transition: font-weight 0.3s ease;
 }
 .contact-item:hover{
@@ -261,4 +316,90 @@ iframe{
   border-radius: 10px;
   margin-right: 15px;
   box-shadow: var(--dropshadow);
+}
+
+/* 404.js */
+.cat{
+  margin-top: 20px;
+  max-width: '100%';
+  height: 'auto';
+}
+
+@media (max-width: 868px) {
+  html{
+    width: 100vw;
+    overflow: hidden;
+  }
+  .header {
+    left: 0px;
+    right: 0px;
+    font-size: max(40px, 10vw) !important;
+  }
+
+  .nav-column {
+    position: fixed;
+    top: 190px; /* Header height */
+    left: 0;
+    width: 100%;
+    background: var(--background-color);
+    padding: 5px 10px;
+    margin: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    padding: 5px 15px;
+    width: fit-content;
+  }
+
+  .tabs a {
+    font-size: 14px;
+    margin: 0;
+    height: 15px;
+    padding: 3px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tabs a:hover,
+  .current-tab {
+    font-size: 16px;
+  }
+
+  .whole-page {
+    top: -15px;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed; /* Add this to lock the page in place */
+    width: 100%;
+  }
+
+  .layout-body {
+    flex-direction: column;
+    padding-top: 85px;
+    height: calc(100vh - 275px);
+    overflow: hidden;
+    position: relative; /* Add this for proper containment */
+  }
+
+  .content {
+    min-width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Add smooth scrolling for iOS */
+    position: relative; /* Add this for proper containment */
+  }
+
+  footer {
+    display: none;
+  }
 }

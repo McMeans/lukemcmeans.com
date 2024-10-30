@@ -1,12 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import { variants } from '../utils/varients.js';
+import { variants } from '../utils/variants.js';
 
 export default function Layout({ children }) {
   const router = useRouter();
+
+  const headerColors = useMemo(() => ({
+    '/': 'linear-gradient(150deg, rgba(208, 0, 0, 1), rgba(7, 55, 99, 1))',
+    '/projects': 'linear-gradient(150deg, rgba(60, 120, 216, 1), rgba(7, 55, 99, 1))',
+    '/experience': 'linear-gradient(150deg, rgba(42, 86, 165, 1), rgba(102, 102, 102, 1))',
+    '/education': 'linear-gradient(150deg, rgba(229, 114, 0, 1), rgba(35, 45, 75, 1))',
+    '/resume': 'linear-gradient(150deg, rgba(67, 67, 67, 1), rgba(102, 102, 102, 1))',
+    '/contact': 'linear-gradient(150deg, rgba(83, 215, 105, 1), rgba(10, 102, 194, 1))',
+  }), []);
 
   useEffect(() => {
     const routesToPrefetch = ['/', '/projects', '/experience', '/education', '/resume', '/contact'];
@@ -18,7 +27,13 @@ export default function Layout({ children }) {
   return (
     <div className="whole-page">
       <link rel="icon" href="/public/favicon.ico" type="image/x-icon"></link>
-      <div className="header">
+      <motion.div 
+        className="header"
+        animate={{
+          background: `${headerColors[router.pathname] || headerColors['/']}`
+        }}
+        transition={{ duration: 0.3 }}
+      >
         <Link href="/">
           <Image
             className="header-logo"
@@ -29,7 +44,7 @@ export default function Layout({ children }) {
           />
           <span>Luke McMeans</span>
         </Link>
-      </div>
+      </motion.div>
       <div className="gap"></div>
       <div className="layout-body">
         <div className="nav-column">
@@ -67,9 +82,9 @@ export default function Layout({ children }) {
           initial="initial"
           animate="enter"
           exit="exit"
-          transition={{ duration: 0.3 }}
         >
           {children}
+          <div className="content-gap"></div>
         </motion.div>
       </div>
     </div>

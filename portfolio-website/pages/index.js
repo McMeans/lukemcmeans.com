@@ -1,34 +1,32 @@
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import { variants } from '../utils/varients.js';
+import { variants } from '../utils/variants.js';
 
-export default function HomePage() {
+export default function HomePage({theme}) {
   return (
     <motion.div
-          className="content"
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
-          transition={{ duration: 0.3 }}
         >
       <title>Luke McMeans - Home</title>
       <div className="home-details">
         <div className="home-detail">
           <Image
             className="detail-image"
-            src='/images/light-mode/coding-light.png'
-            width={28}
-            height={28}
+            src={`/images/${theme}-mode/coding-${theme}.png`}
+            width={30}
+            height={30}
           />
           <text className="detail-label">Aspiring <strong>Software Engineer</strong></text>
         </div>
         <div className="home-detail">
           <Image
             className="detail-image"
-            src='/images/light-mode/uva-light.png'
-            width={28}
-            height={28}
+            src={`/images/${theme}-mode/uva-${theme}.png`}
+            width={30}
+            height={30}
           />
           <text className="detail-label"><strong>Computer Science and Data Science</strong> student at the <strong>University of Virginia</strong></text>
         </div>

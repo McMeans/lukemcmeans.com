@@ -1,15 +1,19 @@
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Layout from './layout.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps, router }) {
+  const excludeLayoutRoutes = ['/loggd-redirect'];
+  const isExcluded = excludeLayoutRoutes.includes(router.pathname);
+  if (isExcluded) {
+    return <Component {...pageProps} />;
+  }
+  
   const [theme, setTheme] = useState('light');
-
   useEffect(() => {
-    // Check if the user has a preferred color scheme
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
     if (userPrefersDark) {
       setTheme('dark');
       document.body.classList.add('dark-mode-colors');
@@ -18,7 +22,6 @@ function MyApp({ Component, pageProps, router }) {
       document.body.classList.remove('dark-mode-colors');
     }
 
-    // Listen for changes to the preferred color scheme
     const handleThemeChange = (e) => {
       if (e.matches) {
         setTheme('dark');
@@ -39,7 +42,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <Layout>
       <AnimatePresence mode="wait">
-          <Component {...pageProps} key={router.asPath} />
+          <Component {...pageProps} key={router.asPath} theme={theme}/>
       </AnimatePresence>
     </Layout>
   );

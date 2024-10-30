@@ -1,20 +1,18 @@
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import { variants } from '../utils/varients.js';
+import { variants } from '../utils/variants.js';
 
 export default function HomePage() {
   return (
     <motion.div
-          className="content"
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
-          transition={{ duration: 0.3 }}
         >
       <title>Luke McMeans - Contact</title>
       <div className="contacts">
-        <a href="mailto:elukemcmeans@gmail.com" className="contact-item">
+        <a href="mailto:elukemcmeans@gmail.com" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/mail.png'
@@ -23,7 +21,7 @@ export default function HomePage() {
           />
           elukemcmeans@gmail.com
         </a>
-        <a href="tel:+1-703-431-6232" className="contact-item">
+        <a href="tel:+1-703-431-6232" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/phone.png'
@@ -32,7 +30,7 @@ export default function HomePage() {
           />
           (703) 431-6232
         </a>
-        <a href="linkedin.com/in/luke-mcmeans" className="contact-item">
+        <a href="https://linkedin.com/in/luke-mcmeans" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/linkedin.png'
@@ -41,7 +39,7 @@ export default function HomePage() {
           />
           in/luke-mcmeans
         </a>
-        <a href="github.com/McMeans" className="contact-item">
+        <a href="https://github.com/McMeans" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/github.png'
@@ -50,7 +48,7 @@ export default function HomePage() {
           />
           McMeans
         </a>
-        <a href="https://discord.com/" className="contact-item">
+        <a href="https://discord.com/" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/discord.png'

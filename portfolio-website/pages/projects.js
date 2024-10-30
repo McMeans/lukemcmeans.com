@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import { variants } from '../utils/varients.js';
+import { variants } from '../utils/variants.js';
 
 export default function HomePage() {
   return (
     <motion.div
-          className="content"
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
-          transition={{ duration: 0.3 }}
         >
       <title>Luke McMeans - Projects</title>
       <div className="activity-tab loggd">
@@ -32,6 +30,8 @@ export default function HomePage() {
             target="_blank" rel="noopener noreferrer">Chromium-based browsers</a> and Firefox. Published 
             August 2023; last updated June 2024.
         </text>
+        <a className="project-link" href="/loggd-redirect" target="_blank" rel="noopener noreferrer">Download</a>
+        <a className="project-link" href="https://github.com/McMeans/loggd" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
       <div className="activity-tab top8s">
         <div className="activity-title">
@@ -51,6 +51,8 @@ export default function HomePage() {
             Templates were designed for each of the weekly tournaments in the area. This 
             program was built using the Django framework and Pillow. Published June 2024.
         </text>
+        <a className="project-link" href="/top8s" target="_blank" rel="noopener noreferrer">Visit</a>
+        <a className="project-link" href="https://github.com/McMeans/charlottesville-top8s" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </motion.div>
   );
