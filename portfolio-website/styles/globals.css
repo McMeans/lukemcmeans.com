@@ -331,11 +331,18 @@ iframe{
 }
 
 @media (max-width: 868px) {
+  html{
+    background-image: var(--background);
+    left: -8px;
+    position: fixed;
+  }
   body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    background: var(--background-color);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .header {
     left: 0px;
@@ -370,7 +377,7 @@ iframe{
   }
 
   .tabs a {
-    font-size: 14px;
+    font-size: min(18px, 3vw);
     margin: 0;
     height: 15px;
     padding: 3px;
@@ -380,14 +387,14 @@ iframe{
 
   .tabs a:hover,
   .current-tab {
-    font-size: 16px;
+    font-size: min(20px, 4vw);
   }
 
   .whole-page {
     top: -15px;
     height: 100vh;
     overflow: hidden;
-    position: fixed; /* Add this to lock the page in place */
+    position: fixed;
     width: 100%;
   }
 
@@ -468,22 +475,22 @@ iframe{
   }
 
   .home-detail{
-    font-size: 18px;
+    font-size: min(25px, 4vw);
   }
   .summary{
-    font-size: 16px;
+    font-size: min(22px, 4vw);
   }
   .activity-tab{
-    font-size: 16px;
+    font-size: min(20px, 4vw);
   }
   .activity-title{
-    font-size: 22px;
+    font-size: min(28px, 5vw);
   }
   .minor{
-    font-size: 18px;
+    font-size: min(24px, 4vw);
   }
   .contact-item{
-    font-size: 16px;
+    font-size: min(22px, 4vw);
   }
 
   .mobile-bottom-padding {
