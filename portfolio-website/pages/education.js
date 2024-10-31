@@ -44,7 +44,7 @@ export default function HomePage() {
                 <li>CS 4170 - Artificial Intelligence</li>
                 <li>CS 3120 - Discrete Mathematics and Theory 2</li>
                 <li>DS 3001 - Foundations of Machine Learning</li>
-                <li>DS 2002 - Database Systems</li>
+                <li>DS 2002 - Data Science Systems</li>
               </ul>
             </li>
         </ul>
