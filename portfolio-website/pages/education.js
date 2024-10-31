@@ -21,8 +21,8 @@ export default function HomePage() {
         <text className="activity-title">
             B.A. Computer Science
         </text>
-        <text className="minor">Data Science Minor</text>
-        <span>08/2022 - 05/2026</span>
+        <div className="minor">Data Science Minor</div>
+        <div style={{ userSelect: 'none', pointerEvents: 'none' }}>08/2022 - 05/2026</div>
         <ul className="tasks">
             <li>3.56 GPA</li>
             <li>Dean's List Spring 2023</li>

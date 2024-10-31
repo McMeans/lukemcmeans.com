@@ -273,7 +273,6 @@ footer a:hover{
 .project-link {
   display: inline-block;
   text-decoration: none;
-  transition: font-weight 0.3s ease !important;
   font-weight: 500;
   margin-top: 5px;
   margin-right: 15px;
@@ -283,9 +282,11 @@ footer a:hover{
   color: white !important;
   border-radius: 8px;
   text-align: center;
+  transition: font-weight 0.3s ease, background-color 0.2s ease !important;
 }
 .project-link:hover{
   font-weight: 700 !important;
+  background-color: #ffffff62;
 }
 
 /* RESUME.js */
@@ -325,28 +326,38 @@ iframe{
   height: 'auto';
 }
 
+.mobile-bottom-padding {
+  display: none;
+}
+
 @media (max-width: 868px) {
-  html{
-    width: 100vw;
-    overflow: hidden;
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background: var(--background-color);
   }
   .header {
     left: 0px;
     right: 0px;
     font-size: max(40px, 10vw) !important;
+    width: 100vw;
+    padding-right: calc(100vw - 100%);
+    margin-right: calc(100% - 100vw);
   }
 
   .nav-column {
     position: fixed;
     top: 190px; /* Header height */
     left: 0;
-    width: 100%;
-    background: var(--background-color);
+    width: 100vw;
     padding: 5px 10px;
     margin: 0;
     z-index: 999;
     display: flex;
     justify-content: center;
+    padding-right: calc(100vw - 100%);
+    margin-right: calc(100% - 100vw);
   }
 
   .tabs {
@@ -393,6 +404,7 @@ iframe{
     max-width: 90%;
     margin: 0 auto;
     padding: 0 20px;
+    padding-bottom: 100px; /* Add padding at the bottom for mobile */
     height: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; /* Add smooth scrolling for iOS */
@@ -401,5 +413,89 @@ iframe{
 
   footer {
     display: none;
+  }
+
+  body {
+    width: 100vw;
+    padding-right: calc(100vw - 100%);
+    margin-right: calc(100% - 100vw);
+  }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    /* Add width to cover scrollbar */
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+  }
+
+  .nav-column {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    /* Add width to cover scrollbar */
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Ensure content doesn't cause horizontal scroll */
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .whole-page {
+    width: 100%;
+    overflow-x: hidden;
+    position: fixed;
+  }
+
+  .home-detail{
+    font-size: 18px;
+  }
+  .summary{
+    font-size: 16px;
+  }
+  .activity-tab{
+    font-size: 16px;
+  }
+  .activity-title{
+    font-size: 22px;
+  }
+  .minor{
+    font-size: 18px;
+  }
+  .contact-item{
+    font-size: 16px;
+  }
+
+  .mobile-bottom-padding {
+    display: block;
+    height: 100px;
+    width: 100%;
+  }
+
+  .content {
+    /* Ensure the content can scroll fully */
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    padding-bottom: env(safe-area-inset-bottom, 100px);
   }
 }

@@ -89,7 +89,7 @@ export default function Layout({ children }) {
           exit="exit"
         >
           {children}
-          <div className="content-gap"></div>
+          <div className="mobile-bottom-padding" />
         </motion.div>
       </div>
     </div>
