@@ -7,6 +7,12 @@ import '../styles/globals.css';
 function MyApp({ Component, pageProps, router }) {
   const excludeLayoutRoutes = ['/loggd-redirect'];
   const isExcluded = excludeLayoutRoutes.includes(router.pathname);
+  const [isFirstMount, setIsFirstMount] = useState(true);
+
+  useEffect(() => {
+    setIsFirstMount(false);
+  }, []);
+
   if (isExcluded) {
     return <Component {...pageProps} />;
   }
@@ -41,7 +47,7 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <Layout>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} key={router.asPath} theme={theme}/>
       </AnimatePresence>
     </Layout>

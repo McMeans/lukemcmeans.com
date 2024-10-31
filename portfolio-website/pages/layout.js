@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { variants } from '../utils/variants.js';
 
 export default function Layout({ children }) {
   const router = useRouter();
+  const [isFirstMount, setIsFirstMount] = useState(true);
 
   const headerColors = useMemo(() => ({
     '/': 'linear-gradient(150deg, rgba(208, 0, 0, 1), rgba(7, 55, 99, 1))',
@@ -16,6 +17,10 @@ export default function Layout({ children }) {
     '/resume': 'linear-gradient(150deg, rgba(67, 67, 67, 1), rgba(102, 102, 102, 1))',
     '/contact': 'linear-gradient(150deg, rgba(83, 215, 105, 1), rgba(10, 102, 194, 1))',
   }), []);
+
+  useEffect(() => {
+    setIsFirstMount(false);
+  }, []);
 
   useEffect(() => {
     const routesToPrefetch = ['/', '/projects', '/experience', '/education', '/resume', '/contact'];
@@ -79,7 +84,7 @@ export default function Layout({ children }) {
         <motion.div
           className="content"
           variants={variants}
-          initial="initial"
+          initial={isFirstMount ? "enter" : "initial"}
           animate="enter"
           exit="exit"
         >
