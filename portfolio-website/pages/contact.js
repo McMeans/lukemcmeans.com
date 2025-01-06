@@ -10,7 +10,7 @@ export default function HomePage() {
           animate="enter"
           exit="exit"
         >
-      <title>Luke McMeans - Contact</title>
+      <title>Contact - Luke McMeans</title>
       <div className="contacts">
         <a href="mailto:elukemcmeans@gmail.com" className="contact-item" target="_blank" rel="noopener noreferrer">
           <Image

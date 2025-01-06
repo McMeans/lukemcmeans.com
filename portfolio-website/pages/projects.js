@@ -10,7 +10,7 @@ export default function HomePage() {
           animate="enter"
           exit="exit"
         >
-      <title>Luke McMeans - Projects</title>
+      <title>Projects - Luke McMeans</title>
       <div className="activity-tab loggd">
         <div className="activity-title">
             <Image

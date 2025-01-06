@@ -10,7 +10,7 @@ export default function HomePage() {
           animate="enter"
           exit="exit"
         >
-      <title>Luke McMeans - Experience</title>
+      <title>Experience - Luke McMeans</title>
       <div className="activity-tab carahsoft">
         <Image
             className="company-image"

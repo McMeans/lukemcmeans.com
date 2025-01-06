@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from 'framer-motion';
 import { variants } from '../utils/variants.js';
 
@@ -10,7 +9,7 @@ export default function HomePage() {
           animate="enter"
           exit="exit"
         >
-      <title>Luke McMeans - Resume</title>
+      <title>Resume - Luke McMeans</title>
       <iframe src="/LukeMcMeans_Resume.pdf" allowFullScreen/>
     </motion.div>
   );

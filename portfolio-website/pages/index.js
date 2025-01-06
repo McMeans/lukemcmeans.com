@@ -10,7 +10,7 @@ export default function HomePage({theme}) {
           animate="enter"
           exit="exit"
         >
-      <title>Luke McMeans - Home</title>
+      <title>Home - Luke McMeans</title>
       <div className="home-details">
         <div className="home-detail">
           <Image
