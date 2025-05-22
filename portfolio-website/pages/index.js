@@ -15,11 +15,13 @@ export default function HomePage({theme}) {
         <div className="home-detail">
           <Image
             className="detail-image"
-            src={`/images/${theme}-mode/coding-${theme}.png`}
+            // src={`/images/${theme}-mode/coding-${theme}.png`}
+            src='/images/timmons-icon.png'
             width={30}
             height={30}
           />
-          <text className="detail-label">Aspiring <strong>Software Engineer</strong></text>
+          {/* <text className="detail-label">Aspiring <strong>Software Engineer</strong></text> */}
+          <text className="detail-label"><strong>Software Engineering Intern</strong> at <strong>Timmons Group</strong></text>
         </div>
         <div className="home-detail">
           <Image
@@ -32,11 +34,11 @@ export default function HomePage({theme}) {
         </div>
       </div>
       <text className="summary">
-        Enthusiastic computer science student with a strong foundation in software development, data structures,
-        LLM/AI prompt-engineering, and mathematics. Committed to providing detail-driven work while staying efficient 
-        and accurate. Proven history of organization, teamwork, and management both in and outside the classroom. 
-        Aspires to utilize abilities while further developing skills, learning new technologies, and gaining real-world 
-        experience, contributing to the success of a dynamic software development team.
+        Computer science student with a strong foundation in software development, data structures, LLM/AI prompt engineering, 
+        and mathematics. Committed to providing detail-driven work while staying efficient and accurate. Proven history of 
+        organization, teamwork, and management both in and outside the classroom. Aspires to utilize abilities while further 
+        developing skills, learning new technologies, and gaining real-world experience, contributing to the success of a 
+        dynamic software development team.
       </text>
         <div className="socials">
           <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer">

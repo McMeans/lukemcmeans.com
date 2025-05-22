@@ -19,13 +19,13 @@ export default function HomePage() {
             height={30}
         />
         <text className="activity-title">
-            B.A. Computer Science
+            Bachelor's in Computer Science
         </text>
         <div className="minor">Data Science Minor</div>
-        <div style={{ userSelect: 'none', pointerEvents: 'none' }}>08/2022 - 05/2026</div>
+        <div style={{ userSelect: 'none', pointerEvents: 'none' }}>08/2022 - 12/2025</div>
         <ul className="tasks">
-            <li>3.56 GPA</li>
-            <li>Dean's List: Fall 2024, Spring 2023</li>
+            <li>3.61 GPA</li>
+            <li>Dean's List: Spring '25, Fall '24, Spring '23</li>
             <li>Developer and Graphic Designer for the Super Smash Brothers Club</li>
             <li>Member of the Association for Computing Machinery</li>
             <li>Relevant Coursework:

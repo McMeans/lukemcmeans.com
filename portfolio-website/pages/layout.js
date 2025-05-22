@@ -12,7 +12,7 @@ export default function Layout({ children }) {
   const headerColors = useMemo(() => ({
     '/': 'linear-gradient(150deg, rgba(208, 0, 0, 1), rgba(7, 55, 99, 1))',
     '/projects': 'linear-gradient(150deg, rgba(60, 120, 216, 1), rgba(7, 55, 99, 1))',
-    '/experience': 'linear-gradient(150deg, rgba(42, 86, 165, 1), rgba(102, 102, 102, 1))',
+    '/experience': 'linear-gradient(150deg, rgba(0, 112, 74, 1), rgba(42, 86, 165, 1)',
     '/education': 'linear-gradient(150deg, rgba(229, 114, 0, 1), rgba(35, 45, 75, 1))',
     '/resume': 'linear-gradient(150deg, rgba(67, 67, 67, 1), rgba(102, 102, 102, 1))',
     '/contact': 'linear-gradient(150deg, rgba(83, 215, 105, 1), rgba(10, 102, 194, 1))',

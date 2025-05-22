@@ -11,6 +11,21 @@ export default function HomePage() {
           exit="exit"
         >
       <title>Experience - Luke McMeans</title>
+      <div className="activity-tab timmons">
+        <Image
+            className="company-image"
+            src='/images/project-experience/timmons.png'
+            width={30*(2000/548)}
+            height={30}
+        />
+        <text className="activity-title">
+            Software Engineering Intern
+        </text>
+        <span>05/2025 - 08/2025</span>
+        <ul className="tasks">
+            <li>Collaborating with a team of veteran developers to build and enhance the company's GIS software</li>
+        </ul>
+      </div>
       <div className="activity-tab carahsoft">
         <Image
             className="company-image"
@@ -34,8 +49,8 @@ export default function HomePage() {
         <Image
             className="company-image"
             src='/images/project-experience/tln.png'
-            width={25*(1079/527)}
-            height={25}
+            width={30*(1079/527)}
+            height={30}
         />
         <text className="activity-title">
             Vice President of Video Editing
