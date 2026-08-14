@@ -11,6 +11,10 @@ export default function HomePage({theme}) {
           exit="exit"
         >
       <title>Home - Luke McMeans</title>
+      <div className="glass-panel home-tagline-panel">
+        <p className="home-tagline">Ambitious about building. Careful about doing it well.</p>
+      </div>
+      <div className="glass-panel hero-panel">
       <div className="home-details">
         <div className="home-detail">
           <Image
@@ -21,7 +25,7 @@ export default function HomePage({theme}) {
             height={30}
           />
           {/* <text className="detail-label">Aspiring <strong>Software Engineer</strong></text> */}
-          <text className="detail-label"><strong>Software Engineering Intern</strong> at <strong>Timmons Group</strong></text>
+          <text className="detail-label"><strong>Software Engineer</strong> at <strong>Timmons Group</strong></text>
         </div>
         <div className="home-detail">
           <Image
@@ -30,15 +34,13 @@ export default function HomePage({theme}) {
             width={30}
             height={30}
           />
-          <text className="detail-label"><strong>Computer Science and Data Science</strong> student at the <strong>University of Virginia</strong></text>
+          <text className="detail-label"><strong>Computer Science and Data Science</strong> graduate at the <strong>University of Virginia</strong></text>
         </div>
       </div>
       <text className="summary">
-        Computer science student with a strong foundation in software development, data structures, LLM/AI prompt engineering, 
-        and mathematics. Committed to providing detail-driven work while staying efficient and accurate. Proven history of 
-        organization, teamwork, and management both in and outside the classroom. Aspires to utilize abilities while further 
-        developing skills, learning new technologies, and gaining real-world experience, contributing to the success of a 
-        dynamic software development team.
+        Strong foundation in software development, user experience, and practical AI-assisted work. Committed to providing 
+        detail-driven work while staying efficient and accurate. Proven history of leading development across projects. 
+        Creative and ambitious when inspiration hits, and always looking for a better way to build.
       </text>
         <div className="socials">
           <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -66,6 +68,7 @@ export default function HomePage({theme}) {
             />
           </a>
         </div>
+      </div>
     </motion.div>
   );
 }

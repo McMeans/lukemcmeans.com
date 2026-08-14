@@ -14,7 +14,7 @@ export default function HomePage() {
       <div className="activity-tab loggd">
         <div className="activity-title">
             <Image
-                className="project-image"
+                className="project-image mono-logo"
                 src='/images/project-experience/loggd.png'
                 width={40}
                 height={40}

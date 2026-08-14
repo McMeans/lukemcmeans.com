@@ -10,7 +10,14 @@ export default function HomePage() {
           exit="exit"
         >
       <title>Resume - Luke McMeans</title>
-      <iframe src="/LukeMcMeans_Resume.pdf" allowFullScreen/>
+      <div className="glass-panel resume-panel">
+        <div className="resume-actions">
+          <a className="glass-btn resume-download" href="/LukeMcMeans_Resume.pdf" download>
+            Download PDF
+          </a>
+        </div>
+        <iframe src="/LukeMcMeans_Resume.pdf" allowFullScreen/>
+      </div>
     </motion.div>
   );
 }

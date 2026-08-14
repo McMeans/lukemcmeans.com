@@ -1,26 +1,76 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
-import { variants } from '../utils/variants.js';
+
+const NAV_ITEMS = [
+  {
+    href: '/',
+    label: 'Home',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 10.5 12 3l9 7.5" />
+        <path d="M5 9.5V20h14V9.5" />
+      </svg>
+    ),
+  },
+  {
+    href: '/projects',
+    label: 'Projects',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z" />
+        <path d="M3 7.5V16.5L12 21l9-4.5V7.5" />
+      </svg>
+    ),
+  },
+  {
+    href: '/experience',
+    label: 'Experience',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        <path d="M3 12h18" />
+      </svg>
+    ),
+  },
+  {
+    href: '/education',
+    label: 'Education',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+        <path d="M6 12v5c0 0 3.5 2 6 2s6-2 6-2v-5" />
+      </svg>
+    ),
+  },
+  {
+    href: '/resume',
+    label: 'Resume',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+        <path d="M14 2v6h6" />
+        <path d="M8 13h8" />
+        <path d="M8 17h8" />
+      </svg>
+    ),
+  },
+  {
+    href: '/contact',
+    label: 'Contact',
+    icon: (
+      <svg className="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </svg>
+    ),
+  },
+];
 
 export default function Layout({ children }) {
   const router = useRouter();
-  const [isFirstMount, setIsFirstMount] = useState(true);
-
-  const headerColors = useMemo(() => ({
-    '/': 'linear-gradient(150deg, rgba(208, 0, 0, 1), rgba(7, 55, 99, 1))',
-    '/projects': 'linear-gradient(150deg, rgba(60, 120, 216, 1), rgba(7, 55, 99, 1))',
-    '/experience': 'linear-gradient(150deg, rgba(0, 112, 74, 1), rgba(42, 86, 165, 1)',
-    '/education': 'linear-gradient(150deg, rgba(229, 114, 0, 1), rgba(35, 45, 75, 1))',
-    '/resume': 'linear-gradient(150deg, rgba(67, 67, 67, 1), rgba(102, 102, 102, 1))',
-    '/contact': 'linear-gradient(150deg, rgba(83, 215, 105, 1), rgba(10, 102, 194, 1))',
-  }), []);
-
-  useEffect(() => {
-    setIsFirstMount(false);
-  }, []);
 
   useEffect(() => {
     const routesToPrefetch = ['/', '/projects', '/experience', '/education', '/resume', '/contact'];
@@ -31,17 +81,11 @@ export default function Layout({ children }) {
 
   return (
     <div className="whole-page">
-      <link rel="icon" href="/public/favicon.ico" type="image/x-icon"></link>
-      <motion.div 
-        className="header"
-        animate={{
-          background: `${headerColors[router.pathname] || headerColors['/']}`
-        }}
-        transition={{ duration: 0.3 }}
-      >
+      <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
+      <div className="header">
         <Link href="/">
           <Image
-            className="header-logo"
+            className="header-logo mono-logo"
             src='/images/header-logo.png'
             width={80}
             height={80}
@@ -49,48 +93,32 @@ export default function Layout({ children }) {
           />
           <span>Luke McMeans</span>
         </Link>
-      </motion.div>
+      </div>
       <div className="gap"></div>
       <div className="layout-body">
         <div className="nav-column">
           <div className="tabs">
-            <Link href="/">
-              <span className={router.pathname === "/" ? "current-tab" : ""}>Home</span>
-            </Link>
-            <Link href="/projects">
-              <span className={router.pathname === "/projects" ? "current-tab" : ""}>Projects</span>
-            </Link>
-            <Link href="/experience">
-              <span className={router.pathname === "/experience" ? "current-tab" : ""}>Experience</span>
-            </Link>
-            <Link href="/education">
-              <span className={router.pathname === "/education" ? "current-tab" : ""}>Education</span>
-            </Link>
-            <Link href="/resume">
-              <span className={router.pathname === "/resume" ? "current-tab" : ""}>Resume</span>
-            </Link>
-            <Link href="/contact">
-              <span className={router.pathname === "/contact" ? "current-tab" : ""}>Contact</span>
-            </Link>
+            {NAV_ITEMS.map(({ href, label, icon }) => {
+              const slug = href === '/' ? 'home' : href.slice(1);
+              const isCurrent = router.pathname === href;
+              return (
+                <Link key={href} href={href} aria-label={label}>
+                  <span className={`tab tab-${slug}${isCurrent ? ' current-tab' : ''}`}>
+                    <span className="tab-label">{label}</span>
+                    <span className="tab-icon">{icon}</span>
+                  </span>
+                </Link>
+              );
+            })}
           </div>
-          <div className="bottom-footer">
-            <footer>
-              <p>Created by Luke McMeans</p>
-              <p>Built using <a href="https://nextjs.org/" target="_blank">Next.js</a></p>
-              <p>Deployed using Vercel</p>
-            </footer>
-          </div>
+          <footer>
+            <p>Created by Luke McMeans (2026)</p>
+          </footer>
         </div>
-        <motion.div
-          className="content"
-          variants={variants}
-          initial={isFirstMount ? "enter" : "initial"}
-          animate="enter"
-          exit="exit"
-        >
+        <div className="content">
           {children}
           <div className="mobile-bottom-padding" />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

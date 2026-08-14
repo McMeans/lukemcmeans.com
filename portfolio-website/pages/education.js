@@ -13,7 +13,7 @@ export default function HomePage() {
       <title>Education - Luke McMeans</title>
       <div className="activity-tab uva">
         <Image
-            className="company-image"
+            className="company-image mono-logo"
             src='/images/project-experience/uva.png'
             width={30*(1587/384)}
             height={30}
@@ -22,17 +22,18 @@ export default function HomePage() {
             Bachelor's in Computer Science
         </text>
         <div className="minor">Data Science Minor</div>
-        <div style={{ userSelect: 'none', pointerEvents: 'none' }}>08/2022 - 12/2025</div>
+        <div className="activity-date" style={{ userSelect: 'none', pointerEvents: 'none' }}>08/2022 - 12/2025</div>
         <ul className="tasks">
-            <li>3.61 GPA</li>
-            <li>Dean's List: Spring '25, Fall '24, Spring '23</li>
+            <li>3.66 GPA</li>
+            <li>Dean's List: F25, S25, F24, S23</li>
             <li>Developer and Graphic Designer for the Super Smash Brothers Club</li>
-            <li>Member of the Association for Computing Machinery</li>
+            <li>Member of the Association for Computing Machinery and Claude Builders Club</li>
             <li>Relevant Coursework:
               <ul>
                 <li>CS 3240 - Software Engineering</li>
                 <li>CS 3140 - Software Development Essentials</li>
                 <li>CS 4170 - Artificial Intelligence</li>
+                <li>CS 4260 - Internet Scale Applications</li>
                 <li>CS 3100 - Data Structures and Algorithms 2</li>
                 <li>CS 3120 - Discrete Mathematics and Theory 2</li>
                 <li>CS 3130 - Computer Systems and Organization 2</li>
@@ -52,7 +53,6 @@ export default function HomePage() {
             </li>"*/}
         </ul>
       </div>
-      <span style={{display: "block", marginBottom: "20px"}}>*Expecting to start an online master's degree while working in 2027</span>
     </motion.div>
   );
 }

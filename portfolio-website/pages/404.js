@@ -10,13 +10,15 @@ export default function PageNotFound() {
           exit="exit"
         >
       <title>Page Not Found - Luke McMeans</title>
-      <h1>(404) Page Not Found</h1>
-      <span>Best I can do is this:</span>
-      <br/>
-      <img
-        className="cat"
-        src="/images/maxwell-cat.gif"
-      />
+      <div className="glass-panel notfound-panel">
+        <h1>(404) Page Not Found</h1>
+        <span>Best I can do is this:</span>
+        <br/>
+        <img
+          className="cat"
+          src="/images/maxwell-cat.gif"
+        />
+      </div>
     </motion.div>
   );
 }

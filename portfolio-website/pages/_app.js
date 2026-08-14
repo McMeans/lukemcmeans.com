@@ -1,23 +1,16 @@
-import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Layout from './layout.js';
+import AmbientBackground from '../components/AmbientBackground';
 import '../styles/globals.css';
+import '../styles/ambient.css';
 
 function MyApp({ Component, pageProps, router }) {
   const excludeLayoutRoutes = ['/loggd-redirect'];
   const isExcluded = excludeLayoutRoutes.includes(router.pathname);
-  const [isFirstMount, setIsFirstMount] = useState(true);
-
-  useEffect(() => {
-    setIsFirstMount(false);
-  }, []);
-
-  if (isExcluded) {
-    return <Component {...pageProps} />;
-  }
-  
   const [theme, setTheme] = useState('light');
+
   useEffect(() => {
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (userPrefersDark) {
@@ -45,12 +38,21 @@ function MyApp({ Component, pageProps, router }) {
     };
   }, []);
 
+  if (isExcluded) {
+    return <Component {...pageProps} />;
+  }
+
   return (
-    <Layout>
-      <AnimatePresence mode="wait" initial={false}>
-          <Component {...pageProps} key={router.asPath} theme={theme}/>
-      </AnimatePresence>
-    </Layout>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Luke McMeans — software engineer portfolio." />
+      </Head>
+      <AmbientBackground />
+      <Layout>
+        <Component {...pageProps} key={router.asPath} theme={theme} />
+      </Layout>
+    </>
   );
 }
 

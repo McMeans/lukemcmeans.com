@@ -12,25 +12,16 @@ export default function HomePage() {
         >
       <title>Contact - Luke McMeans</title>
       <div className="contacts">
-        <a href="mailto:elukemcmeans@gmail.com" className="contact-item" target="_blank" rel="noopener noreferrer">
+        <a href="mailto:elukemcmeans@gmail.com" className="contact-item glass-card" target="_blank" rel="noopener noreferrer">
           <Image
-            className="contact-image"
-            src='/images/socials/mail.png'
+          className="contact-image"
+          src='/images/socials/mail.png'
             width={50}
             height={50}
           />
           elukemcmeans@gmail.com
         </a>
-        <a href="tel:+1-703-431-6232" className="contact-item" target="_blank" rel="noopener noreferrer">
-          <Image
-            className="contact-image"
-            src='/images/socials/phone.png'
-            width={50}
-            height={50}
-          />
-          (703) 431-6232
-        </a>
-        <a href="https://linkedin.com/in/luke-mcmeans" className="contact-item" target="_blank" rel="noopener noreferrer">
+        <a href="https://linkedin.com/in/luke-mcmeans" className="contact-item glass-card" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/linkedin.png'
@@ -39,7 +30,7 @@ export default function HomePage() {
           />
           in/luke-mcmeans
         </a>
-        <a href="https://github.com/McMeans" className="contact-item" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/McMeans" className="contact-item glass-card" target="_blank" rel="noopener noreferrer">
           <Image
             className="contact-image"
             src='/images/socials/github.png'
@@ -47,15 +38,6 @@ export default function HomePage() {
             height={50}
           />
           McMeans
-        </a>
-        <a href="https://discord.com/" className="contact-item" target="_blank" rel="noopener noreferrer">
-          <Image
-            className="contact-image"
-            src='/images/socials/discord.png'
-            width={50}
-            height={50}
-          />
-          @luke.mcmeans
         </a>
       </div>
     </motion.div>
