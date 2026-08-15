@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import { variants } from '../utils/variants.js';
 
-export default function HomePage({theme}) {
+export default function HomePage() {
   return (
     <motion.div
           variants={variants}
@@ -20,21 +20,28 @@ export default function HomePage({theme}) {
         <div className="home-detail">
           <Image
             className="detail-image"
-            // src={`/images/${theme}-mode/coding-${theme}.png`}
             src='/images/timmons-icon.png'
             width={30}
             height={30}
+            alt=""
+            priority
           />
           {/* <text className="detail-label">Aspiring <strong>Software Engineer</strong></text> */}
           <text className="detail-label"><strong>Software Engineer</strong> at <strong>Timmons Group</strong></text>
         </div>
         <div className="home-detail">
-          <Image
-            className="detail-image"
-            src={`/images/${theme}-mode/uva-${theme}.png`}
-            width={30}
-            height={30}
-          />
+          <picture>
+            <source srcSet="/images/dark-mode/uva-dark.png" media="(prefers-color-scheme: dark)" />
+            <img
+              className="detail-image"
+              src="/images/light-mode/uva-light.png"
+              width={30}
+              height={30}
+              alt=""
+              decoding="async"
+              fetchPriority="high"
+            />
+          </picture>
           <text className="detail-label"><strong>Computer Science and Data Science</strong> graduate at the <strong>University of Virginia</strong></text>
         </div>
       </div>
@@ -54,6 +61,8 @@ export default function HomePage({theme}) {
               src='/images/socials/mail.png'
               width={30}
               height={30}
+              alt=""
+              priority
             />
           </a>
           <a href="https://www.linkedin.com/in/luke-mcmeans/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -62,6 +71,8 @@ export default function HomePage({theme}) {
               src='/images/socials/linkedin.png'
               width={30}
               height={30}
+              alt=""
+              priority
             />
           </a>
           <a href="https://github.com/McMeans" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -70,6 +81,8 @@ export default function HomePage({theme}) {
               src='/images/socials/github.png'
               width={30}
               height={30}
+              alt=""
+              priority
             />
           </a>
         </div>

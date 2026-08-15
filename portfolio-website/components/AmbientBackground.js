@@ -31,18 +31,75 @@ export default function AmbientBackground() {
     ...b,
     color: `var(${palette[i % palette.length]})`,
   }));
-  const [isNavigating, setIsNavigating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
-    const onStart = () => setIsNavigating(true);
-    const onDone = () => setIsNavigating(false);
+    let navigating = false;
+    let zoomed = false;
+    let resizeTimer;
+    const baselineDpr = window.devicePixelRatio;
+
+    const isPageZoomed = () => {
+      const vv = window.visualViewport;
+      const pinch = !!(vv && Math.abs(vv.scale - 1) > 0.01);
+      const layout = Math.abs(window.devicePixelRatio - baselineDpr) > 0.05;
+      return pinch || layout;
+    };
+
+    const sync = () => {
+      const paused = navigating || document.hidden || zoomed;
+      pausedRef.current = paused;
+      document.body.classList.toggle('is-pinch-zooming', zoomed);
+      if (ref.current?.parentElement) {
+        ref.current.parentElement.classList.toggle('ambient-root--zoomed', zoomed);
+      }
+      setIsPaused(paused);
+      setIsZoomed(zoomed);
+    };
+
+    const onStart = () => { navigating = true; sync(); };
+    const onDone = () => { navigating = false; sync(); };
+
+    const scheduleZoomResume = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        zoomed = isPageZoomed();
+        sync();
+      }, 250);
+    };
+
+    const onZoomSignal = () => {
+      zoomed = true;
+      sync();
+      scheduleZoomResume();
+    };
+
+    const onWheel = (e) => {
+      if (!e.ctrlKey) return;
+      onZoomSignal();
+    };
+
     router.events.on('routeChangeStart', onStart);
     router.events.on('routeChangeComplete', onDone);
     router.events.on('routeChangeError', onDone);
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('resize', onZoomSignal);
+    window.addEventListener('wheel', onWheel, { passive: true });
+    window.visualViewport?.addEventListener('resize', onZoomSignal);
+    window.visualViewport?.addEventListener('scroll', onZoomSignal);
     return () => {
       router.events.off('routeChangeStart', onStart);
       router.events.off('routeChangeComplete', onDone);
       router.events.off('routeChangeError', onDone);
+      document.removeEventListener('visibilitychange', sync);
+      window.removeEventListener('resize', onZoomSignal);
+      window.removeEventListener('wheel', onWheel);
+      window.visualViewport?.removeEventListener('resize', onZoomSignal);
+      window.visualViewport?.removeEventListener('scroll', onZoomSignal);
+      document.body.classList.remove('is-pinch-zooming');
+      clearTimeout(resizeTimer);
     };
   }, [router.events]);
 
@@ -53,6 +110,7 @@ export default function AmbientBackground() {
 
     let raf;
     const onMove = (e) => {
+      if (pausedRef.current) return;
       const nx = (e.clientX / window.innerWidth - 0.5) * 2;
       const ny = (e.clientY / window.innerHeight - 0.5) * 2;
       cancelAnimationFrame(raf);
@@ -70,7 +128,7 @@ export default function AmbientBackground() {
   }, []);
 
   return (
-    <div className={`ambient-root${isNavigating ? ' ambient-root--paused' : ''}`} aria-hidden="true">
+    <div className={`ambient-root${isPaused ? ' ambient-root--paused' : ''}${isZoomed ? ' ambient-root--zoomed' : ''}`} aria-hidden="true">
       <div className="ambient-parallax" ref={ref}>
         {blobs.map((b) => (
           <span

@@ -18,6 +18,8 @@ export default function HomePage() {
                 src='/images/project-experience/loggd.png'
                 width={40}
                 height={40}
+                alt=""
+                priority
             />
             <p>Loggd</p>
         </div>
@@ -52,6 +54,8 @@ export default function HomePage() {
                 src='/images/project-experience/top8s.png'
                 width={40}
                 height={40}
+                alt=""
+                priority
             />
             <p>Charlottesville Top8s</p>
         </div>

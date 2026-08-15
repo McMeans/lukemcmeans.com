@@ -18,6 +18,8 @@ export default function HomePage() {
           src='/images/socials/mail.png'
             width={50}
             height={50}
+            alt=""
+            priority
           />
           elukemcmeans@gmail.com
         </a>
@@ -27,6 +29,8 @@ export default function HomePage() {
             src='/images/socials/linkedin.png'
             width={50}
             height={50}
+            alt=""
+            priority
           />
           in/luke-mcmeans
         </a>
@@ -36,6 +40,8 @@ export default function HomePage() {
             src='/images/socials/github.png'
             width={50}
             height={50}
+            alt=""
+            priority
           />
           McMeans
         </a>

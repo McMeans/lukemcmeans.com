@@ -77,6 +77,14 @@ export default function Layout({ children }) {
     routesToPrefetch.forEach((route) => {
       router.prefetch(route);
     });
+    const prefetchPdf = () => {
+      fetch('/LukeMcMeans_Resume.pdf', { cache: 'force-cache' }).catch(() => {});
+    };
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(prefetchPdf);
+    } else {
+      setTimeout(prefetchPdf, 250);
+    }
   }, [router]);
 
   return (
@@ -90,6 +98,8 @@ export default function Layout({ children }) {
             width={191}
             height={100}
             alt="Luke McMeans"
+            priority
+            sizes="(max-width: 700px) 50px, 92px"
           />
           <span>Luke McMeans</span>
         </Link>

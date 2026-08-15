@@ -31,6 +31,7 @@
   border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
   mix-blend-mode: screen;
   animation: blobMorph var(--dur) var(--delay) ease-in-out infinite alternate;
+  transition: filter 200ms var(--ease-glass);
 }
 
 .dark-mode-colors .ambient-blob {
@@ -46,7 +47,16 @@
 }
 
 .ambient-root--paused .ambient-parallax {
+  transition: transform 180ms var(--ease-glass);
+}
+
+.ambient-root--zoomed .ambient-blob {
+  filter: none;
   transition: none;
+}
+
+.ambient-root--zoomed .ambient-grain {
+  opacity: 0;
 }
 
 @keyframes blobMorph {
@@ -65,13 +75,16 @@
   pointer-events: none;
   background-image: radial-gradient(rgba(255, 255, 255, 0.6) 0.5px, transparent 0.6px);
   background-size: 3px 3px;
+  transition: opacity 200ms var(--ease-glass);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ambient-blob {
     animation: none;
+    transition: none;
   }
-  .ambient-parallax {
+  .ambient-parallax,
+  .ambient-grain {
     transition: none;
   }
 }

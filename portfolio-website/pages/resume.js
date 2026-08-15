@@ -1,7 +1,15 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../utils/variants.js';
 
 export default function HomePage() {
+  const [pdfReady, setPdfReady] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setPdfReady(true), 1200);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <motion.div
           variants={variants}
@@ -16,7 +24,15 @@ export default function HomePage() {
             Download PDF
           </a>
         </div>
-        <iframe src="/LukeMcMeans_Resume.pdf" allowFullScreen/>
+        <div className={`resume-frame${pdfReady ? ' resume-frame--ready' : ''}`}>
+          {!pdfReady && <div className="resume-skeleton" aria-hidden="true" />}
+          <iframe
+            src="/LukeMcMeans_Resume.pdf"
+            allowFullScreen
+            title="Luke McMeans resume"
+            onLoad={() => setPdfReady(true)}
+          />
+        </div>
       </div>
     </motion.div>
   );

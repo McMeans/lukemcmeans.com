@@ -17,6 +17,8 @@ export default function HomePage() {
             src='/images/project-experience/uva.png'
             width={30*(1587/384)}
             height={30}
+            alt=""
+            priority
         />
         <text className="activity-title">
             Bachelor's in Computer Science

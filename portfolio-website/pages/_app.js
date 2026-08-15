@@ -47,6 +47,8 @@ function MyApp({ Component, pageProps, router }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Luke McMeans — software engineer portfolio." />
+        <link rel="preload" href="/fonts/PublicSans.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="prefetch" href="/LukeMcMeans_Resume.pdf" />
       </Head>
       <AmbientBackground />
       <Layout>

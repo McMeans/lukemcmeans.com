@@ -17,6 +17,8 @@ export default function HomePage() {
             src='/images/project-experience/timmons.png'
             width={30*(2000/548)}
             height={30}
+            alt=""
+            priority
         />
         <text className="activity-title">
             Software Engineer
@@ -46,6 +48,8 @@ export default function HomePage() {
             src='/images/project-experience/carahsoft.png'
             width={25*(826/171)}
             height={25}
+            alt=""
+            priority
         />
         <text className="activity-title">
             Software Development Intern
@@ -64,6 +68,8 @@ export default function HomePage() {
             src='/images/project-experience/tln.png'
             width={30*(1079/527)}
             height={30}
+            alt=""
+            priority
         />
         <text className="activity-title">
             Vice President of Video Editing
