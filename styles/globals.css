@@ -521,8 +521,10 @@ footer a:hover{
 .activity-date{
   font-style: italic;
 }
-.activity-title p{
-  margin: 0;
+.loggd .activity-title,
+.top8s .activity-title {
+  margin-top: -25px;
+  margin-bottom: -10px;
 }
 .project-image{
   margin-right: 15px;

@@ -20,7 +20,7 @@ export default function ProjectsPage() {
               alt=""
               priority={index === 0}
             />
-            <span>{project.title}</span>
+            <p>{project.title}</p>
           </div>
           <span className="description">
             {project.description}
