@@ -86,10 +86,10 @@ export default function Layout({ children }) {
         <Link href="/">
           <Image
             className="header-logo mono-logo"
-            src='/images/header-logo.png'
-            width={80}
-            height={80}
-            alt="Header Logo"
+            src="/images/lm-mark.png"
+            width={191}
+            height={100}
+            alt="Luke McMeans"
           />
           <span>Luke McMeans</span>
         </Link>

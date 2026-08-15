@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { variants } from '../utils/variants.js';
 
@@ -42,8 +43,9 @@ export default function HomePage({theme}) {
         detail-driven work while staying efficient and accurate. Proven history of leading development across projects. 
         Creative and ambitious when inspiration hits, and always looking for a better way to build.
       </text>
+      <div className="home-actions">
         <div className="socials">
-          <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
             <Image 
               className="social-index"
               src='/images/socials/mail.png'
@@ -51,7 +53,7 @@ export default function HomePage({theme}) {
               height={30}
             />
           </a>
-          <a href="https://www.linkedin.com/in/luke-mcmeans/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/luke-mcmeans/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Image 
               className="social-index"
               src='/images/socials/linkedin.png'
@@ -59,7 +61,7 @@ export default function HomePage({theme}) {
               height={30}
             />
           </a>
-          <a href="https://github.com/McMeans" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/McMeans" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Image 
               className="social-index"
               src='/images/socials/github.png'
@@ -68,6 +70,10 @@ export default function HomePage({theme}) {
             />
           </a>
         </div>
+        <Link href="/resume" className="glass-btn home-resume">
+          Resume
+        </Link>
+      </div>
       </div>
     </motion.div>
   );
