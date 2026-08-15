@@ -1,0 +1,27 @@
+export const EDUCATION = {
+  image: '/images/project-experience/uva.png',
+  width: 30 * (1587 / 384),
+  height: 30,
+  title: "Bachelor's in Computer Science",
+  minor: 'Data Science Minor',
+  date: '08/2022 - 12/2025',
+  tasks: [
+    '3.66 GPA',
+    "Dean's List: F25, S25, F24, S23",
+    'Developer and Graphic Designer for the Super Smash Brothers Club',
+    'Member of the Association for Computing Machinery and Claude Builders Club',
+  ],
+  coursework: [
+    'CS 3240 - Software Engineering',
+    'CS 3140 - Software Development Essentials',
+    'CS 4170 - Artificial Intelligence',
+    'CS 4260 - Internet Scale Applications',
+    'CS 3100 - Data Structures and Algorithms 2',
+    'CS 3120 - Discrete Mathematics and Theory 2',
+    'CS 3130 - Computer Systems and Organization 2',
+    'DS 3001 - Foundations of Machine Learning',
+    'DS 2002 - Data Science Systems',
+    'MATH 3351 - Elementary Linear Algebra',
+    'MATH 2310 - Multivariable Calculus',
+  ],
+};
