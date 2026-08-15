@@ -191,7 +191,7 @@ body {
 }
 
 a:focus-visible, button:focus-visible, .glass-btn:focus-visible,
-.tabs a:focus-visible, .contact-item:focus-visible, .project-link:focus-visible{
+.tabs a:focus-visible, .contact-item:focus-visible, .glass-btn:focus-visible{
   outline: 2px solid var(--brand-cyan); outline-offset: 3px; border-radius: var(--r-btn);
 }
 
@@ -514,20 +514,23 @@ footer a:hover{
   display: block;
   font-weight: 300;
 }
-.activity-tab a{
+.activity-tab a:not(.glass-btn){
   color: var(--brand-cyan);
   text-decoration: none;
   transition: color var(--dur-hover) var(--ease-glass);
 }
-.activity-tab a:hover{
+.activity-tab a:not(.glass-btn):hover{
   color: var(--brand-aqua);
 }
-.activity-tab a.project-link{
-  text-decoration: none;
+.activity-tab .socials a{
+  color: inherit;
+  transition: transform var(--dur-hover) var(--ease-glass),
+              box-shadow var(--dur-hover) var(--ease-glass),
+              background var(--dur-hover) var(--ease-glass),
+              border-color var(--dur-hover) var(--ease-glass);
 }
-.activity-tab a.project-link:hover{
-  text-decoration-color: transparent;
-  filter: none;
+.activity-tab .socials a:hover{
+  color: inherit;
 }
 .activity-tab tasks{
   list-style-position:inherit;
@@ -541,30 +544,9 @@ footer a:hover{
 .top8s .description{
   margin-bottom: 5px;
 }
-.project-link {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 5px;
-  margin-right: 15px;
-  min-width: 100px;
-  padding: 8px 16px;
-  color: var(--text) !important;
-  text-align: center;
-  background: var(--glass-bg-soft);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--r-btn);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
-              background var(--dur-hover) var(--ease-glass) !important;
-}
-.project-link:hover{
-  transform: translateY(-2px);
-  background: var(--glass-bg);
-  box-shadow: var(--shadow-card);
+.activity-tab .home-actions{
+  font-size: 16px;
+  margin-top: 12px;
 }
 
 /* RESUME.js */

@@ -44,6 +44,9 @@ export default function HomePage({theme}) {
         Creative and ambitious when inspiration hits, and always looking for a better way to build.
       </text>
       <div className="home-actions">
+        <Link href="/resume" className="glass-btn home-resume">
+          Resume
+        </Link>
         <div className="socials">
           <a href="mailto:elukemcmeans@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
             <Image 
@@ -70,9 +73,6 @@ export default function HomePage({theme}) {
             />
           </a>
         </div>
-        <Link href="/resume" className="glass-btn home-resume">
-          Resume
-        </Link>
       </div>
       </div>
     </motion.div>
