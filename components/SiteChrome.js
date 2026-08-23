@@ -46,8 +46,10 @@ export default function SiteChrome({ children }) {
           </footer>
         </div>
         <div className="content">
-          {children}
-          <div className="mobile-bottom-padding" />
+          <div className="content-scroll">
+            {children}
+            <div className="mobile-bottom-padding" />
+          </div>
         </div>
       </div>
     </div>

@@ -1,154 +1,91 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { getAmbientFlags } from '../lib/capabilities';
+import ChromaticWaves from './ChromaticWaves';
+// Revert tip: swap ChromaticWaves → ReflectBackground and restore tint/fill/opacity props.
+// import ReflectBackground from './ReflectBackground';
 
-// Shared blob geometry (position/size/blur/opacity/motion). Color assigned
-// per-route from PALETTES so each page has its own atmosphere.
-const BLOB_GEOMETRY = [
-  { id: 'd1', layer: 1, size: 120, x: -20, y: -15, blur: 120, opacity: 0.35, dur: 82, delay: 0 },
-  { id: 'd2', layer: 1, size: 110, x: 70,  y: 60,  blur: 130, opacity: 0.30, dur: 90, delay: -20 },
-  { id: 'd3', layer: 1, size: 100, x: 40,  y: -30, blur: 140, opacity: 0.22, dur: 76, delay: -40 },
-  { id: 'm1', layer: 2, size: 70,  x: 10,  y: 30,  blur: 80,  opacity: 0.40, dur: 54, delay: -10 },
-  { id: 'm2', layer: 2, size: 65,  x: 75,  y: 10,  blur: 85,  opacity: 0.28, dur: 60, delay: -30 },
-  { id: 'm3', layer: 2, size: 55,  x: 55,  y: 75,  blur: 90,  opacity: 0.20, dur: 48, delay: -15 },
-  { id: 'g1', layer: 3, size: 50,  x: 30,  y: 50,  blur: 70,  opacity: 0.30, dur: 40, delay: -5 },
-  { id: 'g2', layer: 3, size: 45,  x: 85,  y: 45,  blur: 75,  opacity: 0.26, dur: 44, delay: -25 },
-];
-
-const PALETTES = {
-  '/':           ['--brand-teal', '--brand-aqua', '--brand-cyan', '--brand-sky'],
-  '/projects':   ['--brand-azure', '--brand-sky', '--brand-royal', '--brand-cyan'],
-  '/experience': ['--brand-teal', '--brand-cyan', '--brand-aqua', '--brand-azure'],
-  '/education':  ['--accent-orange', '--accent-peach', '--accent-coral', '--brand-teal'],
-  '/resume':     ['--brand-violet', '--brand-indigo', '--brand-magenta', '--brand-sky'],
-  '/contact':    ['--brand-cyan', '--brand-aqua', '--brand-sky', '--brand-teal'],
+// OriginKit Chromatic Waves — dark matches screenshot; light is a lifted equivalent.
+const DARK = {
+  frequency: 2,
+  speed: 1,
+  bgColor: '#000000',
+  // Same hues, sunk toward black so dots sit flush with the field.
+  colors: ['#121C28', '#071A10'],
+  cellSize: 34,
+  gamma: 6,
+  paletteBias: -3,
 };
 
+const LIGHT = {
+  frequency: 2,
+  speed: 1,
+  bgColor: '#F4F6F8',
+  // Same hues, lifted toward the paper so dots sit flush.
+  colors: ['#DCE3EA', '#D8E2DA'],
+  cellSize: 34,
+  gamma: 5,
+  paletteBias: -2,
+};
+
+function readInitialState() {
+  if (typeof window === 'undefined') {
+    return { dark: true, animation: false };
+  }
+  const { reducedMotion, saveData, hidden } = getAmbientFlags();
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const animation = !reducedMotion && !saveData && !hidden;
+  return { dark, animation };
+}
+
 export default function AmbientBackground() {
-  const ref = useRef(null);
-  const pathname = usePathname();
-  const palette = PALETTES[pathname] || PALETTES['/'];
-  const blobs = BLOB_GEOMETRY.map((b, i) => ({
-    ...b,
-    color: `var(${palette[i % palette.length]})`,
-  }));
-  const [isPaused, setIsPaused] = useState(false);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const pausedRef = useRef(false);
+  const [state, setState] = useState(readInitialState);
 
   useEffect(() => {
-    let navigating = true;
-    let zoomed = false;
-    let resizeTimer;
-    let navTimer;
-    const baselineDpr = window.devicePixelRatio;
-
-    const isPageZoomed = () => {
-      const vv = window.visualViewport;
-      const pinch = !!(vv && Math.abs(vv.scale - 1) > 0.01);
-      const layout = Math.abs(window.devicePixelRatio - baselineDpr) > 0.05;
-      return pinch || layout;
-    };
+    const scheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     const sync = () => {
-      const paused = navigating || document.hidden || zoomed;
-      pausedRef.current = paused;
-      document.body.classList.toggle('is-pinch-zooming', zoomed);
-      if (ref.current?.parentElement) {
-        ref.current.parentElement.classList.toggle('ambient-root--zoomed', zoomed);
-      }
-      setIsPaused(paused);
-      setIsZoomed(zoomed);
-    };
-
-    navTimer = setTimeout(() => {
-      navigating = false;
-      sync();
-    }, 180);
-    sync();
-
-    const scheduleZoomResume = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        zoomed = isPageZoomed();
-        sync();
-      }, 250);
-    };
-
-    const onZoomSignal = () => {
-      zoomed = true;
-      sync();
-      scheduleZoomResume();
-    };
-
-    const onWheel = (e) => {
-      if (!e.ctrlKey) return;
-      onZoomSignal();
+      const { reducedMotion, saveData, hidden } = getAmbientFlags();
+      setState({
+        dark: scheme.matches,
+        animation: !reducedMotion && !saveData && !hidden,
+      });
     };
 
     document.addEventListener('visibilitychange', sync);
-    window.addEventListener('resize', onZoomSignal);
-    window.addEventListener('wheel', onWheel, { passive: true });
-    window.visualViewport?.addEventListener('resize', onZoomSignal);
-    window.visualViewport?.addEventListener('scroll', onZoomSignal);
+    scheme.addEventListener('change', sync);
+    sync();
+
     return () => {
       document.removeEventListener('visibilitychange', sync);
-      window.removeEventListener('resize', onZoomSignal);
-      window.removeEventListener('wheel', onWheel);
-      window.visualViewport?.removeEventListener('resize', onZoomSignal);
-      window.visualViewport?.removeEventListener('scroll', onZoomSignal);
-      document.body.classList.remove('is-pinch-zooming');
-      clearTimeout(resizeTimer);
-      clearTimeout(navTimer);
-    };
-  }, [pathname]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches) return;
-
-    let raf;
-    const onMove = (e) => {
-      if (pausedRef.current) return;
-      const nx = (e.clientX / window.innerWidth - 0.5) * 2;
-      const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        if (ref.current) {
-          ref.current.style.transform = `translate3d(${nx * 8}px, ${ny * 8}px, 0)`;
-        }
-      });
-    };
-    window.addEventListener('mousemove', onMove, { passive: true });
-    return () => {
-      window.removeEventListener('mousemove', onMove);
-      cancelAnimationFrame(raf);
+      scheme.removeEventListener('change', sync);
     };
   }, []);
 
+  const preset = state.dark ? DARK : LIGHT;
+
   return (
-    <div className={`ambient-root${isPaused ? ' ambient-root--paused' : ''}${isZoomed ? ' ambient-root--zoomed' : ''}`} aria-hidden="true">
-      <div className="ambient-parallax" ref={ref}>
-        {blobs.map((b) => (
-          <span
-            key={b.id}
-            className={`ambient-blob ambient-l${b.layer}`}
-            style={{
-              '--c': b.color,
-              '--sz': `${b.size}vmax`,
-              '--x': `${b.x}%`,
-              '--y': `${b.y}%`,
-              '--bl': `${b.blur}px`,
-              '--op': b.opacity,
-              '--dur': `${b.dur}s`,
-              '--delay': `${b.delay}s`,
-            }}
-          />
-        ))}
-      </div>
-      <div className="ambient-grain" />
+    <div
+      className="ambient-root"
+      style={{
+        background: preset.bgColor,
+        '--ambient-bg': preset.bgColor,
+        '--ambient-dot': preset.colors[0],
+        '--ambient-cell': `${preset.cellSize}px`,
+      }}
+      aria-hidden="true"
+    >
+      <ChromaticWaves
+        frequency={preset.frequency}
+        speed={preset.speed}
+        bgColor={preset.bgColor}
+        colors={preset.colors}
+        cellSize={preset.cellSize}
+        gamma={preset.gamma}
+        paletteBias={preset.paletteBias}
+        animation={state.animation}
+      />
     </div>
   );
 }
