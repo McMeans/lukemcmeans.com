@@ -30,7 +30,7 @@
   background-color: var(--ambient-bg, #F4F6F8);
   background-image: radial-gradient(
     circle,
-    color-mix(in srgb, var(--ambient-dot, #DCE3EA) 88%, transparent) 0.85px,
+    color-mix(in srgb, var(--ambient-dot, #E3E8ED) 88%, transparent) 0.85px,
     transparent 0.86px
   );
   background-size: var(--ambient-cell, 34px) var(--ambient-cell, 34px);

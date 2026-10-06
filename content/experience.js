@@ -11,9 +11,9 @@ export const EXPERIENCE = [
         tasks: [
           'Own technical leadership across 4 client projects, driving active development and modernization efforts',
           'Orchestrated AI agents to implement tickets, raising merged PRs from ~1–5 to 7–10 weekly after review',
+          'Built an Electron application for a 30-developer team to run local multi-stack projects from one window',
           'Expanding Playwright E2E coverage from ~35% of critical user flows on an active client project',
           'Leading .NET 6 to .NET 10 modernization, including broader project architecture upgrades on .NET 10',
-          'Enhancing a company-wide feedback platform and integrating it into projects beyond Basecamp/spreadsheets',
         ],
       },
       {

@@ -299,7 +299,9 @@ export default function ChromaticWaves({
       dotProgram = new Program(gl, {
         vertex: DOT_VERT,
         fragment: DOT_FRAG,
-        transparent: true,
+        // Canvas is non-premultiplied and cleared each frame; blending would store
+        // rgb*alpha and darken every anti-aliased dot rim.
+        transparent: false,
         depthTest: false,
         depthWrite: false,
         uniforms: {

@@ -16,36 +16,49 @@
   --accent-peach: #ffb27a;
   --accent-orange: #ff9445;
 
-  /* Surfaces / glass (light mode).
-     One surface fill for every chrome element: header, panels, cards, tabs. */
+  /* Surfaces / glass — same recipe in light + dark (only color values change). */
   --page-bg: #eef2f7;
-  --glass-bg: rgba(255,255,255,0.46);
-  --glass-bg-strong: rgba(255,255,255,0.46);
-  --glass-bg-soft: rgba(255,255,255,0.34);
-  --glass-border: rgba(255,255,255,0.65);
-  --glass-highlight: rgba(255,255,255,0.9);
-  --glass-blur: 40px;
-  --glass-blur-strong: 40px;
-  --glass-blur-nav: 40px;
+  --glass-fill: rgba(22, 36, 52, 0.035);
+  --glass-fill-soft: rgba(22, 36, 52, 0.022);
+  --glass-bg: var(--glass-fill);
+  --glass-bg-strong: var(--glass-fill);
+  --glass-bg-soft: var(--glass-fill-soft);
+  --glass-border: rgba(22, 36, 52, 0.16);
+  --glass-highlight: rgba(255, 255, 255, 0.75);
   --nav-hover: color-mix(in srgb, var(--brand-cyan) 16%, transparent);
+  /* Same sheen recipe in both schemes (white overlays). */
+  --glass-sheen-corner: rgba(255, 255, 255, 0.075);
+  --glass-sheen-top: rgba(255, 255, 255, 0.045);
+  --glass-shadow:
+    4px 4px 24px 0 rgba(31, 70, 110, 0.12),
+    inset 0 0 150px rgba(34, 201, 214, 0.06),
+    inset 0 0 4px 2px rgba(22, 36, 52, 0.07);
+  --glass-shadow-hover:
+    6px 8px 28px 0 rgba(31, 70, 110, 0.16),
+    inset 0 0 160px rgba(34, 201, 214, 0.08),
+    inset 0 0 5px 2px rgba(22, 36, 52, 0.1);
+  --glass-shadow-bar:
+    inset 0 0 150px rgba(34, 201, 214, 0.05),
+    inset 0 0 4px 2px rgba(255, 255, 255, 0.22);
+  --glass-btn-shadow:
+    0 4px 6px rgba(31, 70, 110, 0.1),
+    inset 0 0 4px 1px rgba(255, 255, 255, 0.2);
 
   /* Text */
   --text: #16202b;
   --text-soft: #47586b;
   --text-invert: #ffffff;
 
-  /* Shadows — soft, colored, layered (never harsh black).
-     All 3 keep matching layer structure (outer + inset) so box-shadow
-     transitions interpolate smoothly on hover. */
-  --shadow-soft: 0 4px 20px rgba(31, 70, 110, 0.10), 0 1px 2px rgba(255,255,255,0) inset;
-  --shadow-card: 0 8px 30px rgba(31, 70, 110, 0.14), 0 1px 2px rgba(255,255,255,0.6) inset;
-  --shadow-lift: 0 16px 44px rgba(31, 70, 110, 0.20), 0 1px 2px rgba(255,255,255,0.7) inset;
-  --shadow-nav: 0 10px 40px rgba(31, 70, 110, 0.16);
+  /* Legacy shadow aliases (image dropshadows stay soft). */
+  --shadow-soft: 0 4px 20px rgba(31, 70, 110, 0.10);
+  --shadow-card: var(--glass-shadow);
+  --shadow-lift: var(--glass-shadow-hover);
+  --shadow-nav: var(--glass-shadow);
 
   /* Radii — one proportional scale.
      Surfaces > controls > small imagery. */
-  --r-panel: 20px;
-  --r-card: 20px;
+  --r-panel: 24px;
+  --r-card: 24px;
   --r-btn: 12px;
   --r-input: 12px;
   --r-nav: 12px;
@@ -62,27 +75,46 @@
   --general-text-color: var(--text);
   --footercolor: var(--text-soft);
   --dropshadow: var(--shadow-soft);
-  --dropshadow-hover: var(--shadow-card);
+  --dropshadow-hover: var(--shadow-soft);
   --background: var(--page-bg);
 }
 
 @media (prefers-color-scheme: dark){
   :root{
     --page-bg: #070c14;
-    --glass-bg: rgba(24,34,48,0.46);
-    --glass-bg-strong: rgba(24,34,48,0.46);
-    --glass-bg-soft: rgba(18,26,38,0.34);
-    --glass-border: rgba(255,255,255,0.14);
-    --glass-highlight: rgba(255,255,255,0.22);
+    --glass-fill: rgba(220, 235, 255, 0.055);
+    --glass-fill-soft: rgba(220, 235, 255, 0.035);
+    --glass-bg: var(--glass-fill);
+    --glass-bg-strong: var(--glass-fill);
+    --glass-bg-soft: var(--glass-fill-soft);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-highlight: rgba(255, 255, 255, 0.35);
+    /* Same sheen recipe as light — only fill/border/shadow colors differ. */
+    --glass-sheen-corner: rgba(255, 255, 255, 0.075);
+    --glass-sheen-top: rgba(255, 255, 255, 0.045);
+    --glass-shadow:
+      4px 4px 24px 0 rgba(0, 0, 0, 0.28),
+      inset 0 0 150px rgba(34, 201, 214, 0.05),
+      inset 0 0 4px 2px rgba(255, 255, 255, 0.15);
+    --glass-shadow-hover:
+      6px 8px 28px 0 rgba(0, 0, 0, 0.36),
+      inset 0 0 160px rgba(34, 201, 214, 0.07),
+      inset 0 0 5px 2px rgba(255, 255, 255, 0.22);
+    --glass-shadow-bar:
+      inset 0 0 150px rgba(34, 201, 214, 0.04),
+      inset 0 0 4px 2px rgba(255, 255, 255, 0.12);
+    --glass-btn-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      inset 0 0 4px 1px rgba(255, 255, 255, 0.12);
 
     --text: #eaf1f8;
     --text-soft: #a7b6c7;
     --text-invert: #ffffff;
 
-    --shadow-soft: 0 4px 20px rgba(0,0,0,0.35), 0 1px 1px rgba(255,255,255,0) inset;
-    --shadow-card: 0 8px 30px rgba(0,0,0,0.45), 0 1px 1px rgba(255,255,255,0.08) inset;
-    --shadow-lift: 0 16px 44px rgba(0,0,0,0.55), 0 1px 1px rgba(255,255,255,0.10) inset;
-    --shadow-nav: 0 10px 40px rgba(0,0,0,0.5);
+    --shadow-soft: 0 4px 20px rgba(0,0,0,0.35);
+    --shadow-card: var(--glass-shadow);
+    --shadow-lift: var(--glass-shadow-hover);
+    --shadow-nav: var(--glass-shadow);
 
     --tabcolor: var(--text-soft);
     --general-text-color: var(--text);
@@ -114,76 +146,129 @@ body {
   align-items: center;
 }
 
-/* GLASS MATERIAL SYSTEM */
+/* GLASS MATERIAL SYSTEM — glassmorphism with sheen overlays */
 .glass-panel,
 .glass-card,
-.activity-tab{
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-nav);
-}
-.header{
-  /* Same frost as cards, no drop-shadow — on a full-bleed bar that
-     shadow reads as a heavy fill. */
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  box-shadow: none;
-}
-.glass-panel{
-  border-radius: var(--r-panel);
+.activity-tab,
+.glass-nav,
+.header,
+.tabs a > span.current-tab{
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-  transition: backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
+  overflow: hidden;
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
+
+/* Angled edge reflection */
+.glass-panel::before,
+.glass-card::before,
+.activity-tab::before,
+.glass-nav::before,
+.header::before,
+.tabs a > span.current-tab::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    to left top,
+    var(--glass-sheen-corner) 0%,
+    transparent 50%
+  );
+}
+
+/* Subtle top-to-bottom sheen */
+.glass-panel::after,
+.glass-card::after,
+.activity-tab::after,
+.glass-nav::after,
+.header::after,
+.tabs a > span.current-tab::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    var(--glass-sheen-top) 0%,
+    transparent 100%
+  );
+}
+
+.glass-panel > *,
+.glass-card > *,
+.activity-tab > *,
+.glass-nav > *,
+.header > *,
+.tabs a > span.current-tab > *{
+  position: relative;
+  z-index: 2;
+}
+
+.glass-panel{ border-radius: var(--r-panel); }
 .glass-card{
   border-radius: var(--r-card);
-  position: relative; overflow: hidden;
-  isolation: isolate;
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
-              border-color var(--dur-hover) var(--ease-glass),
-              backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
+  transition: box-shadow var(--dur-hover) var(--ease-glass);
 }
 .glass-card:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lift);
-  border-color: var(--glass-highlight);
+  box-shadow: var(--glass-shadow-hover);
 }
+.activity-tab{
+  border-radius: var(--r-card);
+  transition: box-shadow var(--dur-hover) var(--ease-glass);
+}
+.activity-tab:hover{ box-shadow: var(--glass-shadow-hover); }
+.glass-nav{ border-radius: var(--r-nav); }
+.header{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-shadow: var(--glass-shadow-bar);
+}
+
 .glass-btn{
-  background: var(--glass-bg-soft);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border: 1px solid var(--glass-border);
   border-radius: var(--r-btn);
   color: var(--text);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
-              background var(--dur-hover) var(--ease-glass),
-              backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
+  background: var(--glass-fill-soft);
+  box-shadow: var(--glass-btn-shadow);
+  transition: box-shadow var(--dur-hover) var(--ease-glass),
+              background var(--dur-hover) var(--ease-glass);
 }
-.glass-btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow-card); background: var(--glass-bg); }
-.glass-nav{
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-nav)) saturate(170%);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--r-nav);
-  box-shadow: var(--shadow-nav);
-  transition: backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
+.glass-btn:hover{
+  background: var(--glass-fill);
+  box-shadow: var(--glass-shadow-hover);
 }
+
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
-  .glass-panel,.glass-card,.glass-btn,.glass-nav,.activity-tab,.header{ background: rgba(255,255,255,0.85); }
+  .glass-panel,
+  .glass-card,
+  .activity-tab,
+  .glass-nav,
+  .header,
+  .tabs a > span.current-tab,
+  .glass-btn{
+    background: rgba(255,255,255,0.85);
+  }
   @media (prefers-color-scheme: dark){
-    .glass-panel,.glass-card,.glass-btn,.glass-nav,.activity-tab,.header{ background: rgba(20,28,40,0.9); }
+    .glass-panel,
+    .glass-card,
+    .activity-tab,
+    .glass-nav,
+    .header,
+    .tabs a > span.current-tab,
+    .glass-btn{
+      background: rgba(20,28,40,0.9);
+    }
   }
 }
 
@@ -209,10 +294,8 @@ a:focus-visible, button:focus-visible, .glass-btn:focus-visible,
   z-index: 1000;
   width: 100%;
 
-  border-bottom: 1px solid var(--glass-border);
   color: var(--text);
-  transition: backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
+  transition: box-shadow var(--dur-hover) var(--ease-glass);
 }
 .header a{
   display: flex;
@@ -272,11 +355,10 @@ a:focus-visible, button:focus-visible, .glass-btn:focus-visible,
   font-size: 28px;
   padding: 5px 12px;
   border-radius: var(--r-btn);
-  border: 1px solid transparent;
+  border: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.28);
   transition: background var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
-              border-color var(--dur-hover) var(--ease-glass);
+              box-shadow var(--dur-hover) var(--ease-glass);
 }
 @media (prefers-color-scheme: light){
   .tabs a > span{
@@ -291,20 +373,15 @@ a:focus-visible, button:focus-visible, .glass-btn:focus-visible,
   height: 1em;
   display: block;
 }
-.tabs a:hover > span{
+.tabs a:hover > span:not(.current-tab){
   background: var(--nav-hover);
-  border-color: var(--glass-border);
 }
 .tabs a > span.current-tab{
   color: var(--text) !important;
-  background: var(--glass-bg-strong);
-  border-color: var(--glass-border);
-  box-shadow: var(--shadow-nav);
+  border-radius: var(--r-btn);
 }
 .tabs a:hover > span.current-tab{
-  background: var(--glass-bg-strong);
-  border-color: var(--glass-highlight);
-  box-shadow: var(--shadow-nav);
+  box-shadow: var(--glass-shadow-hover);
 }
 
 /* white logos → black in light mode */
@@ -325,8 +402,8 @@ a:focus-visible, button:focus-visible, .glass-btn:focus-visible,
   height: calc(100vh - 114px);
   overflow: hidden;
   transition: transform 0.3s ease;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 44px, #000 calc(100% - 28px), transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 44px, #000 calc(100% - 28px), transparent 100%);
+  /* No mask/filter/opacity here: any of those makes this a backdrop root, so the
+     glass cards inside stop blurring the field and flicker on neighbor repaints. */
 }
 .content-scroll{
   height: 100%;
@@ -448,27 +525,23 @@ footer a:hover{
   border-radius: var(--r-btn);
   border: 1px solid transparent;
   background: transparent;
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
+  transition: box-shadow var(--dur-hover) var(--ease-glass),
               background var(--dur-hover) var(--ease-glass),
               border-color var(--dur-hover) var(--ease-glass);
 }
 .socials a:hover{
-  transform: translateY(-2px);
-  background: var(--glass-bg);
-  border-color: var(--glass-highlight);
-  box-shadow: var(--shadow-card);
+  background: var(--glass-fill-soft);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow-hover);
 }
 .social-index{
   width: 30px;
   height: auto;
   border-radius: var(--r-icon);
   box-shadow: var(--dropshadow);
-  transition: filter var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass);
+  transition: box-shadow var(--dur-hover) var(--ease-glass);
 }
 .socials a:hover .social-index{
-  filter: brightness(1.18);
   box-shadow: var(--dropshadow-hover);
 }
 
@@ -476,19 +549,8 @@ footer a:hover{
 .activity-tab{
   padding: 30px;
   font-size: 20px;
-  border-radius: var(--r-card);
   margin-bottom: 20px;
   color: var(--text);
-  position: relative; overflow: hidden;
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
-              border-color var(--dur-hover) var(--ease-glass),
-              backdrop-filter 200ms var(--ease-glass),
-              -webkit-backdrop-filter 200ms var(--ease-glass);
-}
-.activity-tab:hover{
-  box-shadow: var(--shadow-nav);
-  border-color: var(--glass-highlight);
 }
 .loggd,
 .top8s,
@@ -497,7 +559,6 @@ footer a:hover{
 .tln,
 .uva{
   background-image: none;
-  box-shadow: var(--shadow-nav);
 }
 
 .activity-title{
@@ -539,10 +600,17 @@ footer a:hover{
 .activity-tab a:not(.glass-btn):hover{
   color: var(--brand-aqua);
 }
+@media (prefers-color-scheme: light){
+  .activity-tab a:not(.glass-btn){
+    color: #06697a;
+  }
+  .activity-tab a:not(.glass-btn):hover{
+    color: #044e5c;
+  }
+}
 .activity-tab .socials a{
   color: inherit;
-  transition: transform var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass),
+  transition: box-shadow var(--dur-hover) var(--ease-glass),
               background var(--dur-hover) var(--ease-glass),
               border-color var(--dur-hover) var(--ease-glass);
 }
@@ -652,20 +720,16 @@ footer a:hover{
   padding: 14px 18px;
 }
 .contact-item:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lift);
-  border-color: var(--glass-highlight);
+  box-shadow: var(--glass-shadow-hover);
 }
 .contact-item:hover .contact-image{
-  filter: brightness(1.18);
   box-shadow: var(--dropshadow-hover);
 }
 .contact-image{
   border-radius: var(--r-btn);
   margin-right: 15px;
   box-shadow: var(--dropshadow);
-  transition: filter var(--dur-hover) var(--ease-glass),
-              box-shadow var(--dur-hover) var(--ease-glass);
+  transition: box-shadow var(--dur-hover) var(--ease-glass);
 }
 
 /* 404.js */
@@ -698,11 +762,20 @@ footer a:hover{
     left: 0;
     right: 0;
     width: 100%;
-    height: 50px;
+    /* Name row (50px) plus the icon row (66px, including the current-tab border). */
+    height: 116px;
+    box-sizing: border-box;
     margin: 0;
+    align-items: flex-start;
     font-size: clamp(17px, 4.8vw, 29px);
+    /* Let taps reach the tab icons painted over the extended glass. */
+    pointer-events: none;
   }
-  .header a { padding: 0 16px; }
+  .header a {
+    padding: 0 16px;
+    height: 50px;
+    pointer-events: auto;
+  }
   .header .header-logo {
     width: auto !important;
     height: 26px !important;
@@ -719,7 +792,7 @@ footer a:hover{
     overflow: hidden;
   }
 
-  /* nav becomes a horizontal glass bar under the header */
+  /* tab icons sit in the lower part of the header glass */
   .nav-column {
     position: fixed;
     top: 50px;
@@ -730,7 +803,7 @@ footer a:hover{
     height: auto;
     margin: 0;
     padding-top: 0;
-    z-index: 999;
+    z-index: 1001;
     flex-direction: row;
   }
   .tabs {
@@ -774,11 +847,9 @@ footer a:hover{
     min-width: 0;
     max-width: 100%;
     width: 100%;
-    margin: 114px 0 0;
-    height: calc(100dvh - 114px);
+    margin: 116px 0 0;
+    height: calc(100dvh - 116px);
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
   }
   .content-scroll {
     padding: 20px 16px 40px;
