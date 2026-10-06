@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import '../styles/globals.css';
 import '../styles/ambient.css';
+import { META_DESCRIPTION } from '../content/agentNote';
 
 const publicSans = localFont({
   src: '../public/fonts/PublicSans.woff2',
@@ -11,7 +12,7 @@ const publicSans = localFont({
 });
 
 export const metadata = {
-  description: 'Luke McMeans — software engineer portfolio.',
+  description: META_DESCRIPTION,
 };
 
 export const viewport = {
@@ -22,6 +23,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={publicSans.variable} suppressHydrationWarning>
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Summary for AI agents" />
+      </head>
       <body>{children}</body>
     </html>
   );

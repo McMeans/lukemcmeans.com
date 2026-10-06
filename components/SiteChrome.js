@@ -4,12 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NAV_ITEMS } from '../lib/nav.js';
+import AgentNote from './AgentNote';
 
 export default function SiteChrome({ children }) {
   const pathname = usePathname();
 
   return (
     <div className="whole-page">
+      <AgentNote />
       <div className="header">
         <Link href="/">
           <Image
