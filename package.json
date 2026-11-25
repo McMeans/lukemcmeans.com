@@ -7,12 +7,16 @@
   },
   "dependencies": {
     "framer-motion": "^11.11.8",
-    "next": "15.5.23",
+    "next": "15.5.29",
     "ogl": "^1.0.11",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "sharp": "^0.35.5"
   }
 }
